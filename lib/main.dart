@@ -96,6 +96,8 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: _screens[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        //bottom bar features
+
         type: BottomNavigationBarType.fixed,
         currentIndex: _currentIndex,
         onTap: _updateIndex,
@@ -103,12 +105,17 @@ class _MyHomePageState extends State<MyHomePage> {
         selectedFontSize: 15,
         unselectedFontSize: 12,
         iconSize: 30,
+
+        // bottom bar nav items
+
         items: [
           BottomNavigationBarItem(
+            // 0th index of the _screen list is home page function
             label: "Home",
             icon: Icon(Icons.home),
           ),
           BottomNavigationBarItem(
+            // 1st index of the _screen list is Progress Page
             label: "Progress",
             icon: Icon(Icons.bar_chart),
           ),
@@ -124,4 +131,5 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
+  // bottom bar widget end
 }
