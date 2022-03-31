@@ -64,6 +64,10 @@ flutter:
     - assets/icons/Log out.svg
     - assets/images/Profile Image.jpg
     - assets/icons/Camera Icon.svg
+    - assets/images/Onboarding_Image1.png
+    - assets/images/Onboarding_Image2.png
+    - assets/images/Onboarding_Image3.png
+    - assets/images/Onboarding_Image4.png
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

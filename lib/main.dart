@@ -18,9 +18,9 @@ class MyApp extends StatelessWidget {
           headline1: TextStyle(fontSize: 24.0, fontWeight: FontWeight.w600),
           headline2: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w600),
           bodyText1: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w400),
+          bodyText2: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w600, color: Colors.grey),
           headline3: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w600, color: Colors.white), //For Buttons
-          headline4: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w600, color: Color.fromARGB(100, 75, 180, 171)), //For Buttons
-          headline5: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w600, color: Colors.black), //For Buttons
+          headline4: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w600, color: Color.fromARGB(100, 75, 180, 171)), //For Buttons 
     ),
       ),
       debugShowCheckedModeBanner: false,
