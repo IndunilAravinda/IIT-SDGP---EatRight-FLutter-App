@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:userprofile_and_settings/screens/onboarding/components/body.dart';
-import 'package:userprofile_and_settings/size_config.dart';
+import 'package:eatright/screens/onboarding/components/body.dart';
+import 'package:eatright/screens/onboarding/components/body.dart';
+import 'package:eatright/size_config.dart';
 
 class OnboardingScreen extends StatelessWidget {
   static String routeName = "/onboarding";

@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:eatright/screens/profile/profile.dart';
 import 'package:eatright/screens/editProfile/editPro.dart';
 import 'package:eatright/screens/settings/settings.dart';
-import 'package:eatright/screens/onboarding/onboarding.dart'
+import 'package:eatright/screens/onboarding/onboarding.dart';
 
 // We use name route
 // All our routes will be available here

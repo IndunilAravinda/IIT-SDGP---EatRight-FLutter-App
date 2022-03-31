@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:userprofile_and_settings/screens/onboarding/components/onboarding_info.dart';
-import 'package:userprofile_and_settings/screens/onboarding/components/start_button.dart';
+// import 'package:shared_preferences/shared_preferences.dart';
+import 'package:eatright/screens/onboarding/components/onboarding_info.dart';
+import 'package:eatright/screens/onboarding/components/start_button.dart';
 
 import '../../../size_config.dart';
 import 'nav_button.dart';
