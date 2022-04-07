@@ -11,9 +11,7 @@ class Body extends StatelessWidget {
           fit: BoxFit.cover,
         ),
       ),
-      child:SingleChildScrollView(
-        child: GenerateMenu(),
-      ),
+      child: GenerateMenu(),  
     );
   }
 }

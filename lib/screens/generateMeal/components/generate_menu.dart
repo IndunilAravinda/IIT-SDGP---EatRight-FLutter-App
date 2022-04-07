@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:userprofile_and_settings/screens/generateMeal/components/meal_api.dart';
-//import 'package:userprofile_and_settings/screens/generateMeal/components/api_methods.dart';
 import 'package:userprofile_and_settings/screens/generateMeal/components/meal_card.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:userprofile_and_settings/screens/generateMeal/components/meal_model.dart';
@@ -55,13 +54,13 @@ class GenerateMenuState extends State {
             maintainAnimation: true,
             maintainState: true,
             visible: viewVisible,
-            child:SingleChildScrollView(
-              child: 
+            child: 
                _isLoading
               ? const Center(child: CircularProgressIndicator())
               : ListView.builder(
+                shrinkWrap: true,
                 itemCount: _meals.length,
-                itemBuilder: (context, index) {
+                itemBuilder: (context, index){
                   return MealCard(
                       title: _meals[index].title,
                       cookTime: _meals[index].cookTime.toString(),
@@ -69,37 +68,8 @@ class GenerateMenuState extends State {
                   );
                 },
               )
-            )
-        )
+            ) 
       ]
-              /*children: [
-                GestureDetector(
-                  child: MealCard(
-                    title: 'Ranchero Supper',
-                    cookTime: '15 min',
-                    sourceUrl:'http://www.tasteofhome.com/Recipes/ranchero-supper',
-                  ),
-                  onTap: () => launch('http://www.tasteofhome.com/Recipes/ranchero-supper'),
-                ),
-
-                GestureDetector(
-                  child: MealCard(
-                    title: 'Eggs Baked in Crispy Prosciutto Baskets',
-                    cookTime: '15 min',
-                    sourceUrl:'http://www.tasteofhome.com/Recipes/ranchero-supper',
-                  ),
-                  onTap: () => launch('http://www.tasteofhome.com/Recipes/ranchero-supper'),
-                ),
-
-                GestureDetector(
-                  child: MealCard(
-                    title: 'Eggs Baked in Crispy Prosciutto Baskets',
-                    cookTime: '15 min',
-                    sourceUrl:'http://www.tasteofhome.com/Recipes/ranchero-supper',
-                  ),
-                  onTap: () => launch('http://www.tasteofhome.com/Recipes/ranchero-supper'),
-                ),
-              ]*/
     );
   }
 }

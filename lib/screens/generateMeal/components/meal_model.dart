@@ -1,7 +1,7 @@
 class Meal {
   //final String day;
   final String title;
-  final String cookTime;
+  final int cookTime;
   final String sourceUrl;
 
   Meal({required this.title, required this.cookTime, required this.sourceUrl});
@@ -9,18 +9,20 @@ class Meal {
   factory Meal.fromJson(dynamic json) {
     return Meal(
         //day: json['week'][0] as String,
-        title: json['meals'] as String,
-        cookTime: json['meals'] as String,
-        sourceUrl: json['meals'] as String);
+        title: json['title'] as String,
+        cookTime: json['readyInMinutes'] as int,
+        sourceUrl: json['sourceUrl'] as String);
   }
   static List<Meal> MealFromSnapshot(List snapshot) {
     return snapshot.map((data) {
+      print(Meal.fromJson(data).toString()); //prints null values! Fix this!
       return Meal.fromJson(data);
     }).toList();
   }
 
   @override
-  String toString(){
+  String toString() {
+    //print('Meal {title: $title, cookTime: $cookTime, sourceUrl: $sourceUrl}');
     return 'Meal {title: $title, cookTime: $cookTime, sourceUrl: $sourceUrl}';
   }
 }
