@@ -35,6 +35,10 @@ dependencies:
   cupertino_icons: ^1.0.2
 
   flutter_svg: ^1.0.3
+  get: ^4.6.1
+  shared_preferences: ^2.0.13
+  url_launcher: ^6.0.20
+  url_launcher_web: ^2.0.9
 
 dev_dependencies:
   flutter_test:
@@ -68,6 +72,7 @@ flutter:
     - assets/images/Onboarding_Image2.png
     - assets/images/Onboarding_Image3.png
     - assets/images/Onboarding_Image4.png
+    - assets/images/Generate_bg.jpg
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
