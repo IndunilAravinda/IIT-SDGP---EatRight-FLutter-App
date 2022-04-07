@@ -11,4 +11,5 @@ final Map<String, WidgetBuilder> routes = {
   EditProfileScreen.routeName: (context) => EditProfileScreen(),
   SettingsScreen.routeName: (context) => SettingsScreen(),
   OnboardingScreen.routeName: (context) => OnboardingScreen(),
+  GenerateScreen.routeName: (context) => GenerateScreen(),
 };
