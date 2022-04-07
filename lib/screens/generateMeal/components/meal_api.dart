@@ -1,14 +1,18 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:userprofile_and_settings/screens/generateMeal/components/meal_model.dart';
+import 'package:eatright/screens/generateMeal/components/meal_model.dart';
 
 class MealApi {
   static Future<List<Meal>> getMeal() async {
-    var APIKey = "23b50c88d0b34c518cf0a42fc2abb827";
-    var url = ('https://api.spoonacular.com/mealplanner/generate?apiKey=' +
-        APIKey +
-        "&timeFrame=day");
-    var response = await http.get(url);
+    var httpsUri = Uri(
+      scheme: 'https',
+      host: '/api.spoonacular.com',
+      path: '/mealplanner/generate',
+      queryParameters: {'apiKey': '23b50c88d0b34c518cf0a42fc2abb827'}); //Add diet,targetCalories and exclusions here!
+      print(httpsUri);
+
+    var response = await http.get(httpsUri);
+    
 
     Map data = jsonDecode(response.body);
     //print(data.toString());

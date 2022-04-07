@@ -15,7 +15,7 @@ class Meal {
   }
   static List<Meal> MealFromSnapshot(List snapshot) {
     return snapshot.map((data) {
-      print(Meal.fromJson(data).toString()); //prints null values! Fix this!
+      print(Meal.fromJson(data).toString()); 
       return Meal.fromJson(data);
     }).toList();
   }

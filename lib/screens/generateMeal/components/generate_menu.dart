@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:userprofile_and_settings/screens/generateMeal/components/meal_api.dart';
-import 'package:userprofile_and_settings/screens/generateMeal/components/meal_card.dart';
+import 'package:eatright/screens/generateMeal/components/meal_api.dart';
+import 'package:eatright/screens/generateMeal/components/meal_card.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:userprofile_and_settings/screens/generateMeal/components/meal_model.dart';
+import 'package:eatright/screens/generateMeal/components/meal_model.dart';
 
 class GenerateMenu extends StatefulWidget {
   @override

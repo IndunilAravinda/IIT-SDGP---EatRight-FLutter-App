@@ -1,3 +1,4 @@
+import 'package:eatright/screens/generateMeal/generate.dart';
 import 'package:eatright/screens/onboarding/onboarding.dart';
 import 'package:flutter/material.dart';
 import 'package:eatright/routes.dart';
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
       title: 'EatRight',
       // home: ProfileScreen(),
       // We use routeName so that we dont need to remember the name
-      initialRoute: ProfileScreen.routeName,
+      initialRoute: GenerateScreen.routeName,
       routes: routes,
     );
   }

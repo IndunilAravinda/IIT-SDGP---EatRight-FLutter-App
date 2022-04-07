@@ -1,3 +1,4 @@
+import 'package:eatright/screens/generateMeal/generate.dart';
 import 'package:flutter/widgets.dart';
 import 'package:eatright/screens/profile/profile.dart';
 import 'package:eatright/screens/editProfile/editPro.dart';

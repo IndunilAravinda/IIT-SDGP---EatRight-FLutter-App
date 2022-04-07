@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:userprofile_and_settings/screens/generateMeal/components/generate_menu.dart';
+import 'package:eatright/screens/generateMeal/components/generate_menu.dart';
 
 class Body extends StatelessWidget {
   @override
