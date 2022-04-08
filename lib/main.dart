@@ -3,26 +3,25 @@ import 'package:eatright/view/home.dart';
 
 void main() {
   runApp(const MaterialApp(
-    home: NavHomePage(),
+    home: MyApp(),
   ));
 }
 
-class NavHomePage extends StatelessWidget {
-  const NavHomePage({Key? key}) : super(key: key);
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
         child: ElevatedButton(
-          child: const Text('Open Home Page'),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => HomePage()),
-            );
-          },
-        ),
+            child: const Text('Open Home Page'),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => HomePage()),
+              );
+            }),
       ),
     );
   }
