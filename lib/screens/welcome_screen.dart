@@ -1,9 +1,12 @@
-import 'package:eatright/login_screen.dart';
-import 'package:eatright/signup_screen.dart';
+// ignore_for_file: deprecated_member_use
+
+import 'package:eatright/screens/login_screen.dart';
+import 'package:eatright/screens/signup_screen.dart';
 import 'package:eatright/widgets/textstyle.dart';
 import 'package:flutter/material.dart';
 
 class WelcomePageWidget extends StatefulWidget {
+  static String routeName = "/welcome";
   @override
   _WelcomePageWidgetState createState() => _WelcomePageWidgetState();
 }
@@ -29,7 +32,7 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget> {
                 fit: BoxFit.cover,
               ),
             ),
-            Align(
+            const Align(
               alignment: AlignmentDirectional(0, -0.55),
               child: Text(
                 'Welcome to EatRight!',
@@ -51,14 +54,14 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget> {
                     );
                   },
                   padding: EdgeInsets.zero,
-                  shape: RoundedRectangleBorder(
+                  shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(25))),
                   color: Color(0xFF00796B),
                   elevation: 2,
                   child: Container(
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(25))),
-                    child: Text(
+                    child: const Text(
                       "Log In",
                       style: wlogin,
                     ),
@@ -66,8 +69,9 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget> {
                 ),
               ),
             ),
+            const SizedBox(height: 10),
             Align(
-              alignment: AlignmentDirectional(0, 0.8),
+              alignment: AlignmentDirectional(0, 0.9),
               child: SizedBox(
                 width: 150,
                 height: 50,
@@ -81,14 +85,14 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget> {
                     );
                   },
                   padding: EdgeInsets.zero,
-                  shape: RoundedRectangleBorder(
+                  shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(25))),
                   color: Colors.white,
                   elevation: 2,
                   child: Container(
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(25))),
-                    child: Text(
+                    child: const Text(
                       "Sign Up",
                       style: signup,
                     ),

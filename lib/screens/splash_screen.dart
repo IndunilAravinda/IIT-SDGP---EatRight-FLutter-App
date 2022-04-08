@@ -1,12 +1,9 @@
 import 'dart:async';
-import 'package:eatright/welcome_screen.dart';
+import 'package:eatright/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(SplashScreen());
-}
-
 class SplashScreen extends StatefulWidget {
+  static String routeName = "/splash";
   @override
   State<StatefulWidget> createState() => StartState();
 }

@@ -1,9 +1,12 @@
-import 'package:eatright/login_screen.dart';
+// ignore_for_file: deprecated_member_use
+
+import 'package:eatright/screens/login_screen.dart';
 import 'package:eatright/widgets/textstyle.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
 
 class SignUpPageWidget extends StatefulWidget {
+  static String routeName = "/signUp";
   @override
   _SignUpPageWidgetState createState() => _SignUpPageWidgetState();
 }
@@ -30,7 +33,7 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget> {
       key: scaffoldKey,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        iconTheme: IconThemeData(color: Color(0xFF212121)),
+        iconTheme: const IconThemeData(color: Color(0xFF212121)),
         automaticallyImplyLeading: true,
         actions: [],
         centerTitle: true,
@@ -42,7 +45,7 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget> {
           onTap: () => FocusScope.of(context).unfocus(),
           child: Stack(
             children: [
-              Align(
+              const Align(
                 alignment: AlignmentDirectional(0, -0.85),
                 child: Text(
                   'Get Started!',
@@ -51,23 +54,23 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget> {
                 ),
               ),
               Align(
-                alignment: AlignmentDirectional(0, -0.45),
+                alignment: const AlignmentDirectional(0, -0.45),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
                   child: TextFormField(
                     controller: textController1,
                     obscureText: false,
                     decoration: InputDecoration(
                       hintText: 'Username',
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: Color(0xFF999999),
                           width: 1,
                         ),
                         borderRadius: BorderRadius.circular(20),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: Color(0xFF999999),
                           width: 1,
                         ),
@@ -75,14 +78,14 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget> {
                       ),
                       filled: true,
                       contentPadding:
-                          EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                          const EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                     ),
                     //style: FlutterFlowTheme.of(context).bodyText1,
                   ),
                 ),
               ),
               Align(
-                alignment: AlignmentDirectional(0, -0.2),
+                alignment: const AlignmentDirectional(0, -0.2),
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
                   child: TextFormField(
@@ -91,14 +94,14 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget> {
                     decoration: InputDecoration(
                       hintText: 'Email',
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: Color(0xFF999999),
                           width: 1,
                         ),
                         borderRadius: BorderRadius.circular(20),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: Color(0xFF999999),
                           width: 1,
                         ),
@@ -106,7 +109,7 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget> {
                       ),
                       filled: true,
                       contentPadding:
-                          EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                          const EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                     ),
                     //style: FlutterFlowTheme.of(context).bodyText1,
                     keyboardType: TextInputType.emailAddress,
@@ -114,23 +117,23 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget> {
                 ),
               ),
               Align(
-                alignment: AlignmentDirectional(0, 0.05),
+                alignment: const AlignmentDirectional(0, 0.05),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
                   child: TextFormField(
                     controller: textController3,
                     obscureText: !passwordVisibility,
                     decoration: InputDecoration(
                       hintText: 'Password',
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: Color(0xFF999999),
                           width: 1,
                         ),
                         borderRadius: BorderRadius.circular(20),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: Color(0xFF999999),
                           width: 1,
                         ),
@@ -157,21 +160,21 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget> {
                 ),
               ),
               Align(
-                alignment: AlignmentDirectional(0, 0.35),
+                alignment: const AlignmentDirectional(0, 0.35),
                 child: SizedBox(
                   width: 250,
                   height: 50,
                   child: RaisedButton(
                     onPressed: () async {},
                     padding: EdgeInsets.zero,
-                    shape: RoundedRectangleBorder(
+                    shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(25))),
                     color: Color(0xFF00796B),
                     elevation: 2,
                     child: Container(
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           borderRadius: BorderRadius.all(Radius.circular(25))),
-                      child: Text(
+                      child: const Text(
                         "Sign Up",
                         style: signUpButton,
                       ),
@@ -179,7 +182,7 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget> {
                   ),
                 ),
               ),
-              Align(
+              const Align(
                 alignment: AlignmentDirectional(0, 0.55),
                 child: Text(
                   'Already have an account?',
@@ -187,7 +190,7 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget> {
                 ),
               ),
               Align(
-                alignment: AlignmentDirectional(0, 0.62),
+                alignment: const AlignmentDirectional(0, 0.65),
                 child: InkWell(
                   onTap: () async {
                     await Navigator.push(
@@ -197,9 +200,9 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget> {
                       ),
                     );
                   },
-                  child: Text(
+                  child: const Text(
                     'Log In',
-                    style: login,
+                    style: logintxt,
                     //style: FlutterFlowTheme.of(context).bodyText1,
                   ),
                 ),

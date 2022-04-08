@@ -22,15 +22,32 @@ const TextStyle login = TextStyle(
 );
 const TextStyle wlogin = TextStyle(
   fontFamily: 'Poppins',
+  fontSize: 16,
   color: Colors.white,
-  fontWeight: FontWeight.w800,
+  fontWeight: FontWeight.w600,
 );
 
 const TextStyle signup = TextStyle(
   fontFamily: 'Poppins',
+  fontSize: 16,
   color: Colors.black,
-  fontWeight: FontWeight.w800,
+  fontWeight: FontWeight.w600,
 );
+
+const TextStyle signuptxt = TextStyle(
+  fontFamily: 'Poppins',
+  fontSize: 16,
+  color: Color.fromARGB(150, 0, 0, 0),
+  fontWeight: FontWeight.w600,
+);
+
+const TextStyle logintxt = TextStyle(
+  fontFamily: 'Poppins',
+  fontSize: 16,
+  color: Color.fromARGB(150, 0, 0, 0),
+  fontWeight: FontWeight.w600,
+);
+
 const TextStyle WelcomeBack = TextStyle(
   fontFamily: 'Poppins',
   color: Colors.black,
@@ -40,10 +57,14 @@ const TextStyle WelcomeBack = TextStyle(
 
 const TextStyle loginButton = TextStyle(
   fontFamily: 'Poppins',
+  fontSize: 16,
   color: Colors.white,
+  fontWeight: FontWeight.w600
 );
 
 const TextStyle signUpButton = TextStyle(
   fontFamily: 'Poppins',
+  fontSize: 16,
   color: Colors.white,
+  fontWeight: FontWeight.w600
 );

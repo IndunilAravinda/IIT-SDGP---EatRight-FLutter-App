@@ -1,8 +1,11 @@
-import 'package:eatright/signup_screen.dart';
+// ignore_for_file: deprecated_member_use
+
+import 'package:eatright/screens/signup_screen.dart';
 import 'package:eatright/widgets/textstyle.dart';
 import 'package:flutter/material.dart';
 
 class LoginPageWidget extends StatefulWidget {
+  static String routeName = "/logIn";
   @override
   _LoginPageWidgetState createState() => _LoginPageWidgetState();
 }
@@ -27,7 +30,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
       key: scaffoldKey,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        iconTheme: IconThemeData(color: Color(0xFF212121)),
+        iconTheme: const IconThemeData(color: Color(0xFF212121)),
         automaticallyImplyLeading: true,
         actions: [],
         centerTitle: true,
@@ -39,36 +42,36 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
         child: Stack(
           children: [
             Align(
-              alignment: AlignmentDirectional(0, -0.45),
+              alignment: const AlignmentDirectional(0, -0.45),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+                padding: const EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
                 child: TextFormField(
                   controller: emailTextFieldController,
                   obscureText: false,
                   decoration: InputDecoration(
-                    hintText: 'Email address',
+                    hintText: 'Email',
                     enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
+                      borderSide: const BorderSide(
                         color: Color(0xFF999999),
                         width: 0,
                       ),
                       borderRadius: BorderRadius.circular(25),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
+                      borderSide: const BorderSide(
                         color: Color(0xFF999999),
                         width: 0,
                       ),
                       borderRadius: BorderRadius.circular(25),
                     ),
                     filled: true,
-                    contentPadding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                    contentPadding: const EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                   ),
                   keyboardType: TextInputType.emailAddress,
                 ),
               ),
             ),
-            Align(
+            const Align(
               alignment: AlignmentDirectional(0, -0.8),
               child: Text(
                 'Welcome Back!',
@@ -85,21 +88,21 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                   decoration: InputDecoration(
                     hintText: 'Password',
                     enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
+                      borderSide: const BorderSide(
                         color: Color(0xFF999999),
                         width: 0,
                       ),
                       borderRadius: BorderRadius.circular(20),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
+                      borderSide: const BorderSide(
                         color: Color(0xFF999999),
                         width: 0,
                       ),
                       borderRadius: BorderRadius.circular(20),
                     ),
                     filled: true,
-                    contentPadding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                    contentPadding: const EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                     suffixIcon: InkWell(
                       onTap: () => setState(
                         () => passwordTextFieldVisibility =
@@ -118,7 +121,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                 ),
               ),
             ),
-            Align(
+            const Align(
               alignment: AlignmentDirectional(0, 0),
               child: Text(
                 'Forgot Password?',
@@ -126,21 +129,21 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
               ),
             ),
             Align(
-              alignment: AlignmentDirectional(0.03, 0.25),
+              alignment: const AlignmentDirectional(0.03, 0.25),
               child: SizedBox(
                 width: 250,
                 height: 50,
                 child: RaisedButton(
                   onPressed: LogIn,
                   padding: EdgeInsets.zero,
-                  shape: RoundedRectangleBorder(
+                  shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(25))),
                   color: Color(0xFF00796B),
                   elevation: 2,
                   child: Container(
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(25))),
-                    child: Text(
+                    child: const Text(
                       "Log In",
                       style: loginButton,
                     ),
@@ -148,15 +151,15 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                 ),
               ),
             ),
-            Align(
-              alignment: AlignmentDirectional(0, 0.45),
+            const Align(
+              alignment: AlignmentDirectional(0, 0.46),
               child: Text(
                 'Don\'t have an account?',
                 //style: FlutterFlowTheme.of(context).bodyText2,
               ),
             ),
             Align(
-              alignment: AlignmentDirectional(0, 0.52),
+              alignment: const AlignmentDirectional(0, 0.56),
               child: InkWell(
                 onTap: () async {
                   await Navigator.push(
@@ -166,9 +169,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                     ),
                   );
                 },
-                child: Text(
+                child: const Text(
                   'Sign Up',
-                  style: signup,
+                  style: signuptxt,
                   //style: FlutterFlowTheme.of(context).bodyText1,
                 ),
               ),
