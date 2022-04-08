@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:profilepage/AllergiesAndCuisines.dart';
-import 'package:profilepage/widgets/textstyle.dart';
+import 'package:eatright/AllergiesAndCuisines.dart';
+import 'package:eatright/widgets/textstyle.dart';
 
 class CreateProfilePageWidget extends StatefulWidget {
   @override

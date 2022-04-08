@@ -32,7 +32,6 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  smooth_page_indicator: ^1.0.0+2
   checkbox_grouped: ^1.8.0
   cupertino_icons: ^1.0.2
   firebase_core: ^1.14.0
@@ -40,6 +39,7 @@ dependencies:
 
   # Firebase
   firebase_auth: ^3.3.4
+  smooth_page_indicator: ^1.0.0+2
 
 dev_dependencies:
   flutter_test:
@@ -63,9 +63,9 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-   assets:
-     - images/eiliv-sonas-aceron-ZuIDLSz3XLg-unsplash.jpg
-     - images/Profile-Pic-Icon.png
+  assets:
+    - assets/images/eiliv-sonas-aceron-ZuIDLSz3XLg-unsplash.jpg
+    - assets/images/Profile-Pic-Icon.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -95,4 +95,4 @@ flutter:
   fonts:
     - family: Poppins
       fonts:
-        - asset: assets/fonts/Poppins-Regular.ttf
+        - asset: assets\fonts\Poppins-Regular.ttf

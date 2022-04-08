@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:profilepage/checkbox.dart';
-import 'package:profilepage/widgets/textstyle.dart';
+import 'package:eatright/checkbox.dart';
+import 'package:eatright/widgets/textstyle.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class AllergiesAndCuisinesPageWidget extends StatefulWidget {
