@@ -1,7 +1,8 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:eatright/screens/generateMeal/components/meal_api.dart';
 import 'package:eatright/screens/generateMeal/components/meal_card.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:eatright/screens/generateMeal/components/meal_model.dart';
 
 class GenerateMenu extends StatefulWidget {
@@ -39,12 +40,12 @@ class GenerateMenuState extends State {
         const SizedBox(height: 30),
         RaisedButton(
           child: Text(
-            'Genenerate Meal',
+            'Generate Meal',
             style: Theme.of(context).textTheme.headline3,
           ),
           onPressed: showWidget,
-          color: Color.fromARGB(255, 75, 180, 171),
-          padding: EdgeInsets.symmetric(horizontal: 50, vertical: 18),
+          color: const Color.fromARGB(255, 75, 180, 171),
+          padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 18),
           elevation: 1,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
