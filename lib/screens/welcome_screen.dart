@@ -26,7 +26,7 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget> {
             Align(
               alignment: AlignmentDirectional(0, 0),
               child: Image.asset(
-                'images/welcome_page.jpg',
+                'assets/images/welcome_page.jpg',
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height * 1,
                 fit: BoxFit.cover,
