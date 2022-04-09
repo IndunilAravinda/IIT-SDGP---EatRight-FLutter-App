@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primaryColor: Color.fromARGB(99, 58, 163, 154),
+        primaryColor: Color.fromARGB(255, 75, 180, 171),
         fontFamily: 'Poppins',
         textTheme: const TextTheme(
           headline1: TextStyle(fontSize: 24.0, fontWeight: FontWeight.w600),
@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
       title: 'EatRight',
       // home: ProfileScreen(),
       // We use routeName so that we dont need to remember the name
-      initialRoute: GenerateScreen.routeName,
+      initialRoute: OnboardingScreen.routeName,
       routes: routes,
     );
   }
