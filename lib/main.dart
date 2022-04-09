@@ -1,6 +1,7 @@
 import 'package:eatright/routes.dart';
 import 'package:eatright/screens/allergiesAndCuisines/components/AllergiesAndCuisines.dart';
 import 'package:eatright/screens/createprofilepage.dart';
+import 'package:eatright/screens/generateMeal/generate.dart';
 import 'package:eatright/screens/login_screen.dart';
 import 'package:eatright/screens/mainNavigationPage.dart';
 import 'package:eatright/screens/signup_screen.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: BottomNavigation.routeName,
+      initialRoute: GenerateMealPage.routeName,
       routes: routes,
     );
   }
