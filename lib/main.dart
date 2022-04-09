@@ -1,4 +1,6 @@
 import 'package:eatright/routes.dart';
+import 'package:eatright/screens/allergiesAndCuisines/components/AllergiesAndCuisines.dart';
+import 'package:eatright/screens/createprofilepage.dart';
 import 'package:eatright/screens/login_screen.dart';
 import 'package:eatright/screens/signup_screen.dart';
 import 'package:eatright/screens/splash_screen.dart';
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primaryColor: Color.fromARGB(97, 10, 136, 125), 
+        primaryColor: const Color(0xff009688), 
         fontFamily: 'Poppins',
         textTheme: const TextTheme(
           headline1: TextStyle(fontSize: 24.0, fontWeight: FontWeight.w600),

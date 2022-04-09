@@ -1,10 +1,13 @@
+// ignore_for_file: deprecated_member_use
+
+import 'package:eatright/screens/allergiesAndCuisines/components/allergies.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:eatright/screens/checkbox.dart';
 import 'package:eatright/widgets/textstyle.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class AllergiesAndCuisinesPageWidget extends StatefulWidget {
+  static String routeName = "/allergiesAndCuisines";
   @override
   _AllergiesAndCuisinesPageWidgetState createState() =>
       _AllergiesAndCuisinesPageWidgetState();
@@ -49,7 +52,7 @@ class _AllergiesAndCuisinesPageWidgetState
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             30, 0, 30, 0),
-                                        child: const Text(
+                                        child: Text(
                                           'Are you allergic to any of the following?',
                                           style: Checkbox1,
                                         ),
@@ -59,9 +62,9 @@ class _AllergiesAndCuisinesPageWidgetState
                                         alignment:
                                             AlignmentDirectional(0, 0.25),
                                         child: DynamicallyCheckbox()),
-                                    Align(
+                                    const Align(
                                       alignment:
-                                          const AlignmentDirectional(0, 0.95),
+                                          AlignmentDirectional(0, 0.95),
                                       child: Text(
                                         'Swipe down to continue',
                                         //style: FlutterFlowTheme.of(context).bodyText2,
@@ -96,14 +99,14 @@ class _AllergiesAndCuisinesPageWidgetState
                                                   BorderRadius.circular(25),
                                             ),
                                             child: Stack(
-                                              children: [
+                                              children: const [
                                                 Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           0.85, 1),
-                                                  child: MyStatefulWidget(),
+                                                  child: AllergiesScreen(),
                                                 ),
-                                                const Padding(
+                                                Padding(
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(20, 20, 0, 0),
                                                   child: Text(
@@ -143,14 +146,14 @@ class _AllergiesAndCuisinesPageWidgetState
                                                   BorderRadius.circular(25),
                                             ),
                                             child: Stack(
-                                              children: [
+                                              children: const [
                                                 Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           0.85, 1),
-                                                  child: MyStatefulWidget(),
+                                                  child: AllergiesScreen(),
                                                 ),
-                                                const Padding(
+                                                Padding(
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(20, 20, 0, 0),
                                                   child: Text(
@@ -190,17 +193,17 @@ class _AllergiesAndCuisinesPageWidgetState
                                                   BorderRadius.circular(25),
                                             ),
                                             child: Stack(
-                                              children: [
+                                              children: const [
                                                 Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           0.85, 1),
-                                                  child: MyStatefulWidget(),
+                                                  child: AllergiesScreen(),
                                                 ),
-                                                const Padding(
+                                                Padding(
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(20, 20, 0, 0),
-                                                  child: const Text(
+                                                  child: Text(
                                                     'Gluten free',
                                                     textAlign: TextAlign.start,
                                                     style: glutenfree,
@@ -214,7 +217,7 @@ class _AllergiesAndCuisinesPageWidgetState
                                     ),
                                     const Align(
                                       alignment: AlignmentDirectional(0, -0.65),
-                                      child: const Padding(
+                                      child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             30, 0, 30, 0),
                                         child: Text(
@@ -248,17 +251,17 @@ class _AllergiesAndCuisinesPageWidgetState
                                                   BorderRadius.circular(25),
                                             ),
                                             child: Stack(
-                                              children: [
+                                              children: const [
                                                 Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           0.85, 1),
-                                                  child: MyStatefulWidget(),
+                                                  child: AllergiesScreen(),
                                                 ),
-                                                const Padding(
+                                                Padding(
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(20, 20, 0, 0),
-                                                  child: const Text(
+                                                  child: Text(
                                                     'Ketogenic',
                                                     textAlign: TextAlign.start,
                                                     style: ketogenic,
@@ -295,14 +298,14 @@ class _AllergiesAndCuisinesPageWidgetState
                                                   BorderRadius.circular(25),
                                             ),
                                             child: Stack(
-                                              children: [
+                                              children: const [
                                                 Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           0.85, 1),
-                                                  child: MyStatefulWidget(),
+                                                  child: AllergiesScreen(),
                                                 ),
-                                                const Padding(
+                                                Padding(
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(20, 20, 0, 0),
                                                   child: Text(
@@ -342,14 +345,14 @@ class _AllergiesAndCuisinesPageWidgetState
                                                   BorderRadius.circular(25),
                                             ),
                                             child: Stack(
-                                              children: [
+                                              children: const [
                                                 Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           0.85, 1),
-                                                  child: MyStatefulWidget(),
+                                                  child: AllergiesScreen(),
                                                 ),
-                                                const Padding(
+                                                Padding(
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(20, 20, 0, 0),
                                                   child: Text(
@@ -374,7 +377,7 @@ class _AllergiesAndCuisinesPageWidgetState
                                           onPressed: () {},
                                           padding: EdgeInsets.zero,
                                           shape: const RoundedRectangleBorder(
-                                              borderRadius: const BorderRadius
+                                              borderRadius: BorderRadius
                                                       .all(
                                                   const Radius.circular(25))),
                                           color: Colors.black,
@@ -397,10 +400,10 @@ class _AllergiesAndCuisinesPageWidgetState
                             ),
                           ),
                           Align(
-                            alignment: AlignmentDirectional(-0.8, -0.9),
+                            alignment: const AlignmentDirectional(-0.8, -0.9),
                             child: Padding(
                               padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
+                                  const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
                               child: Container(
                                 child: SmoothPageIndicator(
                                   controller: pageViewController =
@@ -421,8 +424,8 @@ class _AllergiesAndCuisinesPageWidgetState
                                     radius: 16,
                                     dotWidth: 16,
                                     dotHeight: 16,
-                                    dotColor: const Color(0xFF9E9E9E),
-                                    activeDotColor: const Color(0xFF009688),
+                                    dotColor:  Color(0xFF9E9E9E),
+                                    activeDotColor:  Color(0xFF009688),
                                     paintStyle: PaintingStyle.fill,
                                   ),
                                 ),
@@ -472,13 +475,13 @@ class DynamicallyCheckboxState extends State {
   Widget build(BuildContext context) {
     return Column(children: <Widget>[
       Container(
-        height: 650,
+        height: 550,
         padding: EdgeInsetsDirectional.fromSTEB(10, 180, 30, 60),
         alignment: Alignment.center,
 
-        //margin:  EdgeInsetsDirectional.fromSTEB(50, 0, 30, 0),
+        margin:  EdgeInsetsDirectional.fromSTEB(50, 0, 30, 0),
         //padding: EdgeInsetsDirectional.fromSTEB(50, 0, 30, 0),
-        child: Expanded(
+        //child: Expanded(
           child: ListView(
             children: List.keys.map((String value) {
               return CheckboxListTile(
@@ -498,7 +501,7 @@ class DynamicallyCheckboxState extends State {
             //margin:  EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
           ),
         ),
-      ),
+      //),
     ]);
   }
 

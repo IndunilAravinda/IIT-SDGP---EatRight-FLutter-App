@@ -1,5 +1,7 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
-import 'package:eatright/screens/AllergiesAndCuisines.dart';
+import 'package:eatright/screens/allergiesAndCuisines/components/AllergiesAndCuisines.dart';
 import 'package:eatright/widgets/textstyle.dart';
 
 class CreateProfilePageWidget extends StatefulWidget {
@@ -45,11 +47,11 @@ class _CreateProfilePageWidgetState extends State<CreateProfilePageWidget> {
               ),
             ),
             Align(
-              alignment: AlignmentDirectional(0, 1),
+              alignment: const AlignmentDirectional(0, 1),
               child: Container(
                 width: double.infinity,
                 height: MediaQuery.of(context).size.height * 0.85,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Color(0xFFEEEEEE),
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(0),
@@ -60,20 +62,20 @@ class _CreateProfilePageWidgetState extends State<CreateProfilePageWidget> {
                 ),
                 child: Stack(
                   children: [
-                    Align(
+                    const Align(
                       alignment: AlignmentDirectional(0, -0.9),
                       child: Text(
                         'Complete Profile',
-                        //style: FlutterFlowTheme.of(context).title1,
+                        style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.w600)
                       ),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(0, -0.75),
+                      alignment: const AlignmentDirectional(0, -0.75),
                       child: Container(
                         width: 120,
                         height: 120,
                         clipBehavior: Clip.antiAlias,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           shape: BoxShape.circle,
                         ),
                         child: Image.asset(
@@ -81,31 +83,31 @@ class _CreateProfilePageWidgetState extends State<CreateProfilePageWidget> {
                         ),
                       ),
                     ),
-                    Align(
-                      alignment: AlignmentDirectional(0, -0.4),
+                    const Align(
+                      alignment: AlignmentDirectional(0, -0.35),
                       child: Text(
                         'Update Profile Avatar',
                         style: updateProfileAvatar,
                       ),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(0, -0.2),
+                      alignment: const AlignmentDirectional(0, -0.2),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
                         child: TextFormField(
                           controller: textController1,
                           obscureText: false,
                           decoration: InputDecoration(
                             hintText: 'Your Name',
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Color(0xFF999999),
                                 width: 1,
                               ),
                               borderRadius: BorderRadius.circular(25),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Color(0xFF999999),
                                 width: 1,
                               ),
@@ -113,30 +115,30 @@ class _CreateProfilePageWidgetState extends State<CreateProfilePageWidget> {
                             ),
                             filled: true,
                             contentPadding:
-                                EdgeInsetsDirectional.fromSTEB(25, 0, 0, 0),
+                                const EdgeInsetsDirectional.fromSTEB(25, 0, 0, 0),
                           ),
                           style: bodytext,
                         ),
                       ),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(0, 0.05),
+                      alignment: const AlignmentDirectional(0, 0.05),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
                         child: TextFormField(
                           controller: textController2,
                           obscureText: false,
                           decoration: InputDecoration(
                             hintText: 'Your Age',
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Color(0xFF999999),
                                 width: 1,
                               ),
                               borderRadius: BorderRadius.circular(25),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Color(0xFF999999),
                                 width: 1,
                               ),
@@ -144,30 +146,30 @@ class _CreateProfilePageWidgetState extends State<CreateProfilePageWidget> {
                             ),
                             filled: true,
                             contentPadding:
-                                EdgeInsetsDirectional.fromSTEB(25, 0, 0, 0),
+                                const EdgeInsetsDirectional.fromSTEB(25, 0, 0, 0),
                           ),
-                          //style: FlutterFlowTheme.of(context).bodyText1,
+                          style: bodytext,
                         ),
                       ),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(0, 0.3),
+                      alignment: const AlignmentDirectional(0, 0.3),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
                         child: TextFormField(
                           controller: textController3,
                           obscureText: false,
                           decoration: InputDecoration(
                             hintText: 'Your Gender',
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Color(0xFF999999),
                                 width: 1,
                               ),
                               borderRadius: BorderRadius.circular(25),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Color(0xFF999999),
                                 width: 1,
                               ),
@@ -175,30 +177,30 @@ class _CreateProfilePageWidgetState extends State<CreateProfilePageWidget> {
                             ),
                             filled: true,
                             contentPadding:
-                                EdgeInsetsDirectional.fromSTEB(25, 0, 0, 0),
+                                const EdgeInsetsDirectional.fromSTEB(25, 0, 0, 0),
                           ),
-                          //style: FlutterFlowTheme.of(context).bodyText1,
+                          style: bodytext,
                         ),
                       ),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(0, 0.55),
+                      alignment: const AlignmentDirectional(0, 0.55),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(10, 0, 200, 0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(10, 0, 260, 0),
                         child: TextFormField(
                           controller: textController4,
                           obscureText: false,
                           decoration: InputDecoration(
                             hintText: 'Weight (kg)',
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Color(0xFF999999),
                                 width: 1,
                               ),
                               borderRadius: BorderRadius.circular(25),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Color(0xFF999999),
                                 width: 1,
                               ),
@@ -206,30 +208,30 @@ class _CreateProfilePageWidgetState extends State<CreateProfilePageWidget> {
                             ),
                             filled: true,
                             contentPadding:
-                                EdgeInsetsDirectional.fromSTEB(25, 0, 0, 0),
+                                const EdgeInsetsDirectional.fromSTEB(25, 0, 0, 0),
                           ),
                           //style: FlutterFlowTheme.of(context).bodyText1,
                         ),
                       ),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(0, 0.55),
+                      alignment: const AlignmentDirectional(0, 0.55),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(200, 0, 10, 0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(260, 0, 10, 0),
                         child: TextFormField(
                           controller: textController5,
                           obscureText: false,
                           decoration: InputDecoration(
                             hintText: 'Height (cm)',
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Color(0xFF999999),
                                 width: 1,
                               ),
                               borderRadius: BorderRadius.circular(25),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Color(0xFF999999),
                                 width: 1,
                               ),
@@ -237,14 +239,14 @@ class _CreateProfilePageWidgetState extends State<CreateProfilePageWidget> {
                             ),
                             filled: true,
                             contentPadding:
-                                EdgeInsetsDirectional.fromSTEB(25, 0, 0, 0),
+                                const EdgeInsetsDirectional.fromSTEB(25, 0, 0, 0),
                           ),
                           //style: FlutterFlowTheme.of(context).bodyText1,
                         ),
                       ),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(0, 0.8),
+                      alignment: const AlignmentDirectional(0, 0.85),
                       child: SizedBox(
                         width: 160,
                         height: 50,
@@ -259,16 +261,16 @@ class _CreateProfilePageWidgetState extends State<CreateProfilePageWidget> {
                             );
                           },
                           padding: EdgeInsets.zero,
-                          shape: RoundedRectangleBorder(
+                          shape: const RoundedRectangleBorder(
                               borderRadius:
                                   BorderRadius.all(Radius.circular(25))),
                           color: Color(0xFF009688),
                           elevation: 2,
                           child: Container(
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(25))),
-                            child: Text(
+                            child: const Text(
                               "Continue",
                               style: Continue,
                             ),
