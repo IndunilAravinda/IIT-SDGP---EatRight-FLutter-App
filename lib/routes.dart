@@ -1,5 +1,6 @@
 import 'package:eatright/screens/createprofilepage.dart';
 import 'package:eatright/screens/editProfile/editPro.dart';
+import 'package:eatright/screens/generateMeal/generate.dart';
 import 'package:eatright/screens/login_screen.dart';
 import 'package:eatright/screens/onboarding/onboarding.dart';
 import 'package:eatright/screens/settings/settings.dart';
@@ -21,4 +22,5 @@ final Map<String, WidgetBuilder> routes = {
   UserProfilePage.routeName:(context) => UserProfilePage(),
   SettingsScreen.routeName:(context) => SettingsScreen(),
   EditProfileScreen.routeName:(context) => EditProfileScreen(),
+  GenerateMealPage.routeName:(context) => GenerateMealPage(),
 };
