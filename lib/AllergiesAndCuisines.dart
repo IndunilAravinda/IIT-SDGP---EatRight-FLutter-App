@@ -38,7 +38,7 @@ class _AllergiesAndCuisinesPageWidgetState
                         children: [
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                0, 0, 0, 75),
+                                0, 0, 0, 50),
                             child: PageView(
                               scrollDirection: Axis.vertical,
                               children: [

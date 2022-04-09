@@ -38,7 +38,7 @@ class _CreateProfilePageWidgetState extends State<CreateProfilePageWidget> {
             Align(
               alignment: AlignmentDirectional(0, -2.78),
               child: Image.asset(
-                'images/eiliv-sonas-aceron-ZuIDLSz3XLg-unsplash.jpg',
+                'assets/images/eiliv-sonas-aceron-ZuIDLSz3XLg-unsplash.jpg',
                 width: double.infinity,
                 fit: BoxFit.cover,
               ),
@@ -76,7 +76,7 @@ class _CreateProfilePageWidgetState extends State<CreateProfilePageWidget> {
                           shape: BoxShape.circle,
                         ),
                         child: Image.asset(
-                          'images/Profile-Pic-Icon.png',
+                          'assets/images/Profile-Pic-Icon.png',
                         ),
                       ),
                     ),

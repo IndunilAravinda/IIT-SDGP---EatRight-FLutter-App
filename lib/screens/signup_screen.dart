@@ -1,6 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:eatright/screens/login_screen.dart';
+import 'package:eatright/createprofilepage.dart';
 import 'package:eatright/widgets/textstyle.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
@@ -165,7 +166,14 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget> {
                   width: 250,
                   height: 50,
                   child: RaisedButton(
-                    onPressed: () async {},
+                    onPressed: () async {
+                      await Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => CreateProfilePageWidget(),
+                        ),
+                      );
+                    },
                     padding: EdgeInsets.zero,
                     shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(25))),
