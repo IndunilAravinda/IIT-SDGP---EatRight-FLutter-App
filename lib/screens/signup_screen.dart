@@ -3,7 +3,7 @@
 import 'package:eatright/screens/login_screen.dart';
 import 'package:eatright/screens/createprofilepage.dart';
 import 'package:eatright/screens/onboarding/onboarding.dart';
-import 'package:eatright/widgets/textstyle.dart';
+import 'package:eatright/textstyle.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
 

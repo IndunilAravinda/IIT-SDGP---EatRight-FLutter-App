@@ -1,7 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:eatright/screens/signup_screen.dart';
-import 'package:eatright/widgets/textstyle.dart';
+import 'package:eatright/textstyle.dart';
 import 'package:flutter/material.dart';
 
 class LoginPageWidget extends StatefulWidget {

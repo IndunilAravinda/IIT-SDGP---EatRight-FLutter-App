@@ -3,7 +3,7 @@
 import 'package:eatright/screens/allergiesAndCuisines/components/allergies.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:eatright/widgets/textstyle.dart';
+import 'package:eatright/textstyle.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class AllergiesAndCuisinesPageWidget extends StatefulWidget {

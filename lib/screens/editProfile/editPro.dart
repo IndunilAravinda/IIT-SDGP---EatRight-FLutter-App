@@ -1,14 +1,18 @@
-import 'package:eatright/screens/userProfile/components/body.dart';
 import 'package:flutter/material.dart';
 
-class UserProfilePage extends StatelessWidget {
-  static String routeName = "/profile";
+import 'components/body.dart';
+
+class EditProfileScreen extends StatelessWidget {
+  static String routeName = "/editProfile";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: IconThemeData(
+          color: Colors.black,
+        ),
         backgroundColor: Colors.white,
-        title: Text("User Profile",
+        title: Text("Edit Profile",
         style: Theme.of(context).textTheme.headline1,
         ),
         centerTitle: true,

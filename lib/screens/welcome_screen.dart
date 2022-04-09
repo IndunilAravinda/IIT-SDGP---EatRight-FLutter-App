@@ -2,7 +2,7 @@
 
 import 'package:eatright/screens/login_screen.dart';
 import 'package:eatright/screens/signup_screen.dart';
-import 'package:eatright/widgets/textstyle.dart';
+import 'package:eatright/textstyle.dart';
 import 'package:flutter/material.dart';
 
 class WelcomePageWidget extends StatefulWidget {

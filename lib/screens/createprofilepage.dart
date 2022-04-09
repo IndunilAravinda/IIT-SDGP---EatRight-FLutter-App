@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:eatright/screens/allergiesAndCuisines/components/AllergiesAndCuisines.dart';
-import 'package:eatright/widgets/textstyle.dart';
+import 'package:eatright/textstyle.dart';
 
 class CreateProfilePageWidget extends StatefulWidget {
   static String routeName = "/createProfile";

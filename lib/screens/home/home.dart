@@ -5,7 +5,10 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home"),
+        backgroundColor: Colors.white,
+        title: Text("Home",
+        style: Theme.of(context).textTheme.headline1,
+        ),
       ),
     );
   }

@@ -2,6 +2,7 @@ import 'package:eatright/routes.dart';
 import 'package:eatright/screens/allergiesAndCuisines/components/AllergiesAndCuisines.dart';
 import 'package:eatright/screens/createprofilepage.dart';
 import 'package:eatright/screens/login_screen.dart';
+import 'package:eatright/screens/mainNavigationPage.dart';
 import 'package:eatright/screens/signup_screen.dart';
 import 'package:eatright/screens/splash_screen.dart';
 import 'package:eatright/screens/welcome_screen.dart';
@@ -25,11 +26,11 @@ class MyApp extends StatelessWidget {
           bodyText1: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w400),
           bodyText2: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w600, color: Colors.grey),
           headline3: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w600, color: Colors.white), //For Buttons
-          headline4: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w600, color: Color.fromARGB(100, 75, 180, 171)), //For Buttons 
+          headline4: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w600, color: Color(0xff009688)), //For Buttons 
         ),
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: SplashScreen.routeName,
+      initialRoute: BottomNavigation.routeName,
       routes: routes,
     );
   }

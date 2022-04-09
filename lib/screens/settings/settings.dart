@@ -1,14 +1,18 @@
-import 'package:eatright/screens/userProfile/components/body.dart';
 import 'package:flutter/material.dart';
 
-class UserProfilePage extends StatelessWidget {
-  static String routeName = "/profile";
+import 'components/body.dart';
+
+class SettingsScreen extends StatelessWidget {
+  static String routeName = "/settings";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: IconThemeData(
+          color: Colors.black,
+        ),
         backgroundColor: Colors.white,
-        title: Text("User Profile",
+        title: Text("Settings",
         style: Theme.of(context).textTheme.headline1,
         ),
         centerTitle: true,

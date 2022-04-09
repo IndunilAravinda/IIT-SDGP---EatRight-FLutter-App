@@ -5,9 +5,10 @@ import 'package:eatright/screens/userProfile/userProfile.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavigation extends StatefulWidget {
-  const BottomNavigation({Key? key, required this.title}) : super(key: key);
+  static String routeName = "/navigation";
+  const BottomNavigation({Key? key}) : super(key: key);
 
-  final String title;
+  //final String title;
 
   @override
   State<BottomNavigation> createState() => _BottomNavigationState();
@@ -51,7 +52,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
         type: BottomNavigationBarType.fixed,
         currentIndex: _currentIndex,
         onTap: _updateIndex,
-        selectedItemColor: Colors.blue[700],
+        selectedItemColor: Theme.of(context).primaryColor,
         selectedFontSize: 15,
         unselectedFontSize: 12,
         iconSize: 30,
