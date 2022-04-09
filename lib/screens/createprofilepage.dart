@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:eatright/AllergiesAndCuisines.dart';
+import 'package:eatright/screens/AllergiesAndCuisines.dart';
 import 'package:eatright/widgets/textstyle.dart';
 
 class CreateProfilePageWidget extends StatefulWidget {
+  static String routeName = "/createProfile";
   @override
   _CreateProfilePageWidgetState createState() =>
       _CreateProfilePageWidgetState();

@@ -1,4 +1,6 @@
+import 'package:eatright/screens/createprofilepage.dart';
 import 'package:eatright/screens/login_screen.dart';
+import 'package:eatright/screens/onboarding/onboarding.dart';
 import 'package:eatright/screens/signup_screen.dart';
 import 'package:eatright/screens/splash_screen.dart';
 import 'package:eatright/screens/welcome_screen.dart';
@@ -9,4 +11,6 @@ final Map<String, WidgetBuilder> routes = {
   SignUpPageWidget.routeName: (context) => SignUpPageWidget(),
   SplashScreen.routeName: (context) => SplashScreen(),
   WelcomePageWidget.routeName: (context) => WelcomePageWidget(),
+  OnboardingScreen.routeName: (context) => OnboardingScreen(),
+  CreateProfilePageWidget.routeName:(context) => CreateProfilePageWidget(),
 };

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:eatright/checkbox.dart';
+import 'package:eatright/screens/checkbox.dart';
 import 'package:eatright/widgets/textstyle.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 

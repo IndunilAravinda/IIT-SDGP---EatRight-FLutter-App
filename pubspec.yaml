@@ -40,6 +40,7 @@ dependencies:
   # Firebase
   firebase_auth: ^3.3.4
   smooth_page_indicator: ^1.0.0+2
+  shared_preferences: ^2.0.13
 
 dev_dependencies:
   flutter_test:
@@ -68,6 +69,10 @@ flutter:
     - assets\images\Profile-Pic-Icon.png
     - assets\images\welcome_page.jpg
     - assets\images\launcher_icon.png
+    - assets\images\Onboarding_Image1.png
+    - assets\images\Onboarding_Image2.png
+    - assets\images\Onboarding_Image3.png
+    - assets\images\Onboarding_Image4.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
