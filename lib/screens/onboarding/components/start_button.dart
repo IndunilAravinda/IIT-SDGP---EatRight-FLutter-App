@@ -1,3 +1,4 @@
+import 'package:eatright/screens/allergiesAndCuisines/components/AllergiesAndCuisines.dart';
 import 'package:eatright/screens/mainNavigationPage.dart';
 import 'package:flutter/material.dart';
 
@@ -25,7 +26,7 @@ class MyTextButton extends StatelessWidget {
         width: SizeConfig.blockSizeH! * 100,
         child: TextButton(
           onPressed: () async {await 
-            Navigator.push(context,MaterialPageRoute(builder: (context) => const BottomNavigation(),
+            Navigator.push(context,MaterialPageRoute(builder: (context) => AllergiesAndCuisinesPageWidget(),
             ),);
           },
           child: Text(
