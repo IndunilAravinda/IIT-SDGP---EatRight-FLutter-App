@@ -11,27 +11,13 @@ class GenerateMenu extends StatefulWidget {
 }
 
 class GenerateMenuState extends State {
-  late List<Meal> _meals;
-  bool _isLoading = true;
-  bool viewVisible = false;
-
-  void showWidget() {
-    setState(() {
-      viewVisible = true;
-    });
-  }
+  static late List<Meal> _meals;
+  static bool _isLoading = true;
+  static bool viewVisible = false;
 
   @override
   void initState() {
     super.initState();
-    getMeals();
-  }
-
-  Future<void> getMeals() async {
-    _meals = await MealApi.getMeal();
-    setState(() {
-      _isLoading = false;
-    });
   }
 
   Widget build(BuildContext context) {
@@ -42,7 +28,13 @@ class GenerateMenuState extends State {
           'Generate Meal',
           style: Theme.of(context).textTheme.headline3,
         ),
-        onPressed: showWidget,
+        onPressed: () async {
+          _meals = await MealApi.getMeal();
+          setState(() {
+            _isLoading = false;
+            viewVisible = true;
+          });
+        },
         color: const Color.fromARGB(255, 75, 180, 171),
         padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
         elevation: 1,
@@ -64,7 +56,27 @@ class GenerateMenuState extends State {
                         cookTime: _meals[index].cookTime.toString(),
                         sourceUrl: _meals[index].sourceUrl);
                   },
-                ))
-    ]);
+                )
+        ),
+        const SizedBox(height: 30),
+        RaisedButton(
+          child: Text(
+            'Get new plan',
+            style: Theme.of(context).textTheme.headline3,
+          ),
+          onPressed: () async {
+            _meals = await MealApi.getMeal();
+            setState(() {
+            _isLoading = false;
+            });
+          },
+          color: const Color.fromARGB(255, 75, 180, 171),
+          padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+          elevation: 1,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+        ),
+        const SizedBox(height: 20),
+      ]
+    );
   }
 }

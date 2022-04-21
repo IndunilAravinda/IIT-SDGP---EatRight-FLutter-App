@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: BottomNavigation.routeName,
+      initialRoute: SplashScreen.routeName,
       routes: routes,
     );
   }

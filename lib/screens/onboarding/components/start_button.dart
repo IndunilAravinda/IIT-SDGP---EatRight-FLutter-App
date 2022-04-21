@@ -1,3 +1,4 @@
+import 'package:eatright/screens/mainNavigationPage.dart';
 import 'package:flutter/material.dart';
 
 import '../../../size_config.dart';
@@ -23,7 +24,10 @@ class MyTextButton extends StatelessWidget {
         height: SizeConfig.blockSizeH! * 10,
         width: SizeConfig.blockSizeH! * 100,
         child: TextButton(
-          onPressed: onPressed,
+          onPressed: () async {await 
+            Navigator.push(context,MaterialPageRoute(builder: (context) => const BottomNavigation(),
+            ),);
+          },
           child: Text(
             buttonName,
             style: Theme.of(context).textTheme.headline3,

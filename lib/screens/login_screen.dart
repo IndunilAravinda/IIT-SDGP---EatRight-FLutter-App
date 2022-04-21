@@ -1,5 +1,6 @@
 // ignore_for_file: deprecated_member_use
 
+import 'package:eatright/screens/mainNavigationPage.dart';
 import 'package:eatright/screens/signup_screen.dart';
 import 'package:eatright/textstyle.dart';
 import 'package:flutter/material.dart';
@@ -134,7 +135,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                 width: 250,
                 height: 50,
                 child: RaisedButton(
-                  onPressed: LogIn,
+                  onPressed: () async {await 
+                    Navigator.push(context,MaterialPageRoute(builder: (context) => const BottomNavigation(),
+                    ),);
+                  },
                   padding: EdgeInsets.zero,
                   shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(25))),
