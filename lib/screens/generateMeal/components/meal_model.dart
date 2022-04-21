@@ -16,7 +16,7 @@ class Meal {
   // ignore: non_constant_identifier_names
   static List<Meal> MealFromSnapshot(List snapshot) {
     return snapshot.map((data) {
-      //print(Meal.fromJson(data).toString()); 
+      print(Meal.fromJson(data).toString()); 
       return Meal.fromJson(data);
     }).toList();
   }

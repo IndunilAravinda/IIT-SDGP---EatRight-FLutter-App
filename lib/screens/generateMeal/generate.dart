@@ -8,22 +8,12 @@ class GenerateMealPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Text("Daily Meal Plan",
+        title: Text("Current Meal Plan",
         style: Theme.of(context).textTheme.headline1,
         ),
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        child: Container(
-          decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("assets/images/welcome_page.jpg"),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: Body()
-        )
-      ),
+      body: Body(),
     );
   }
 }

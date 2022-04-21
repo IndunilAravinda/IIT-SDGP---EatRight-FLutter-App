@@ -1,6 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:eatright/screens/allergiesAndCuisines/components/allergies.dart';
+import 'package:eatright/screens/mainNavigationPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:eatright/textstyle.dart';
@@ -24,7 +25,7 @@ class _AllergiesAndCuisinesPageWidgetState
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: const Color(0xFFF5F5F5),
-      body: SafeArea(
+      body: SingleChildScrollView(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
           child: Column(
@@ -374,7 +375,14 @@ class _AllergiesAndCuisinesPageWidgetState
                                         width: 150,
                                         height: 50,
                                         child: RaisedButton(
-                                          onPressed: () {},
+                                          onPressed: () async {
+                                            await Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) => BottomNavigation(),
+                                              ),
+                                            );
+                                          },
                                           padding: EdgeInsets.zero,
                                           shape: const RoundedRectangleBorder(
                                               borderRadius: BorderRadius
@@ -479,9 +487,9 @@ class DynamicallyCheckboxState extends State {
         padding: EdgeInsetsDirectional.fromSTEB(10, 180, 30, 60),
         alignment: Alignment.center,
 
-        margin:  EdgeInsetsDirectional.fromSTEB(50, 0, 30, 0),
+        margin:  EdgeInsetsDirectional.fromSTEB(50, 50, 30, 0),
         //padding: EdgeInsetsDirectional.fromSTEB(50, 0, 30, 0),
-        //child: Expanded(
+        child: Expanded(
           child: ListView(
             children: List.keys.map((String value) {
               return CheckboxListTile(
@@ -502,6 +510,7 @@ class DynamicallyCheckboxState extends State {
           ),
         ),
       //),
+    )
     ]);
   }
 

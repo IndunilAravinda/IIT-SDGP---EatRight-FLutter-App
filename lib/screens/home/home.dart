@@ -9,6 +9,7 @@ class HomePage extends StatelessWidget {
         title: Text("Home",
         style: Theme.of(context).textTheme.headline1,
         ),
+        centerTitle: true,
       ),
     );
   }

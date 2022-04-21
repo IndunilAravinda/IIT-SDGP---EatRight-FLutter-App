@@ -9,6 +9,7 @@ class ProgressPage extends StatelessWidget {
         title: Text("Progress",
         style: Theme.of(context).textTheme.headline1,
         ),
+        centerTitle: true,
       ),
     );
   }
