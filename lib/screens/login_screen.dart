@@ -79,7 +79,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
               ),
             ),
             Align(
-              alignment: AlignmentDirectional(0, -0.2),
+              alignment: AlignmentDirectional(0, -0.1),
               child: Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
                 child: TextFormField(
@@ -122,14 +122,14 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
               ),
             ),
             const Align(
-              alignment: AlignmentDirectional(0, 0),
+              alignment: AlignmentDirectional(0, 0.1),
               child: Text(
                 'Forgot Password?',
                 //style: FlutterFlowTheme.of(context).bodyText2,
               ),
             ),
             Align(
-              alignment: const AlignmentDirectional(0.03, 0.25),
+              alignment: const AlignmentDirectional(0.03, 0.3),
               child: SizedBox(
                 width: 250,
                 height: 50,
