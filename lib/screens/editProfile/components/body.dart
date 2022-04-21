@@ -42,7 +42,7 @@ class Body extends StatelessWidget {
                       style: Theme.of(context).textTheme.headline3,
                     ),
                     onPressed: (){},
-                    color: Theme.of(context).primaryColor,
+                    color: const Color.fromARGB(255, 75, 180, 171),
                     padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
                     elevation: 1,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),

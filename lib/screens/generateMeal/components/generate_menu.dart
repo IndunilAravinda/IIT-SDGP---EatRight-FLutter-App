@@ -13,7 +13,7 @@ class GenerateMenu extends StatefulWidget {
 class GenerateMenuState extends State {
   static late List<Meal> _meals;
   static bool _isLoading = true;
-  static bool viewVisible = false;
+  static bool viewVisible = true;
 
   @override
   void initState() {
@@ -41,10 +41,12 @@ class GenerateMenuState extends State {
           elevation: 1,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
         ),
+        const SizedBox(height: 30),
         Visibility(
             maintainSize: true,
             maintainAnimation: true,
             maintainState: true,
+            maintainSemantics: true,
             visible: viewVisible,
             child: _isLoading
                 ? const Center(child: CircularProgressIndicator())
@@ -61,7 +63,7 @@ class GenerateMenuState extends State {
         const SizedBox(height: 30),
         RaisedButton(
           child: Text(
-            'Get new plan',
+            'Try new plan',
             style: Theme.of(context).textTheme.headline3,
           ),
           onPressed: () async {
@@ -75,7 +77,7 @@ class GenerateMenuState extends State {
           elevation: 1,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
         ),
-        const SizedBox(height: 20),
+        const SizedBox(height: 50),
     ]
     );
   }

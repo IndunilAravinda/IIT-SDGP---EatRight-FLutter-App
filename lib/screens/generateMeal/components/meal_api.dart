@@ -15,7 +15,7 @@ class MealApi {
     print(httpsUri);
     //var response = await http.get(httpsUri);
     var response = await http.get(Uri.parse(
-        'https://api.spoonacular.com/mealplanner/generate?apiKey=23b50c88d0b34c518cf0a42fc2abb827&timeFrame=week&targetCalories=1000'));
+        'https://api.spoonacular.com/mealplanner/generate?apiKey=23b50c88d0b34c518cf0a42fc2abb827&timeFrame=day&targetCalories=1000'));
 
     //print(response);
 
@@ -23,15 +23,18 @@ class MealApi {
     //print(data.toString());
     List _temp = [];
 
-    List days = ["monday","tuesday","wednesday","thursday","friday","saturday","sunday"];
+    //List days = ["monday","tuesday","wednesday","thursday","friday","saturday","sunday"];
 
-    for( var i = 0 ; i < 7; i++ ){
+    /*for( var i = 0 ; i < 7; i++ ){
         for (var i in data['week'][days[i]]['meals']) {
           _temp.add(i);
         }
-    }
+    }*/
     //print(_temp.toString());
 
+    for (var i in data['meals']) {
+          _temp.add(i);
+        }
     return Meal.MealFromSnapshot(_temp);
   }
 }

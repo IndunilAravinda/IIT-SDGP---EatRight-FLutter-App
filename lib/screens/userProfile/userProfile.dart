@@ -9,7 +9,7 @@ class UserProfilePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Text("User Profile",
-        style: Theme.of(context).textTheme.headline1,
+        style: Theme.of(context).textTheme.headline2,
         ),
         centerTitle: true,
       ),
