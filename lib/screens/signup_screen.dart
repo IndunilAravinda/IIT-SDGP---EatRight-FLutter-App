@@ -1,9 +1,11 @@
 // ignore_for_file: deprecated_member_use
 
+import 'package:eatright/loginPageResources/auth_methods.dart';
 import 'package:eatright/screens/login_screen.dart';
 import 'package:eatright/screens/createprofilepage.dart';
 import 'package:eatright/screens/onboarding/onboarding.dart';
 import 'package:eatright/textstyle.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -23,10 +25,19 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget> {
   @override
   void initState() {
     super.initState();
-    textController1 = TextEditingController();
-    textController2 = TextEditingController();
-    textController3 = TextEditingController();
+    textController1 = TextEditingController(); // username
+    textController2 = TextEditingController(); // email
+    textController3 = TextEditingController(); //
     passwordVisibility = false;
+  }
+
+// Ind : added dispose
+  @override
+  void dispose() {
+    super.dispose();
+    textController1.dispose();
+    textController2.dispose();
+    textController3.dispose();
   }
 
   @override
@@ -168,12 +179,30 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget> {
                   height: 50,
                   child: RaisedButton(
                     onPressed: () async {
-                      await Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => OnboardingScreen(),
-                        ),
-                      );
+                      // signup button action
+
+                      String res = await AuthMethods().signUpUser(
+                          username: textController1.text,
+                          email: textController2.text,
+                          password: textController3.text);
+
+                      // await Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(
+                      //     builder: (context) => OnboardingScreen(),
+                      //   ),
+                      // );
+
+                      print(res);
+
+                      if (res == "Success :)") {
+                        await Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => OnboardingScreen(),
+                          ),
+                        );
+                      }
                     },
                     padding: EdgeInsets.zero,
                     shape: const RoundedRectangleBorder(
