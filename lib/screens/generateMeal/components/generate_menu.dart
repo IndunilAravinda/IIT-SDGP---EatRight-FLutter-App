@@ -13,7 +13,7 @@ class GenerateMenu extends StatefulWidget {
 class GenerateMenuState extends State {
   static late List<Meal> _meals;
   static bool _isLoading = true;
-  static bool viewVisible = true;
+  static bool viewVisible = false;
 
   @override
   void initState() {
