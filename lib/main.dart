@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         textTheme: const TextTheme(
           headline1: TextStyle(fontSize: 24.0, fontWeight: FontWeight.w600),
           headline2: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w600),
-          bodyText1: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w400),
+          bodyText1: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w400),
           bodyText2: TextStyle(
               fontSize: 14.0, fontWeight: FontWeight.w600, color: Colors.grey),
           headline3: TextStyle(
@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: BottomNavigation.routeName,
+      initialRoute: SplashScreen.routeName,
       routes: routes,
     );
   }

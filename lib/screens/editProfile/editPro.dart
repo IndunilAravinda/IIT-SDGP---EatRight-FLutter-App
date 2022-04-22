@@ -13,7 +13,7 @@ class EditProfileScreen extends StatelessWidget {
         ),
         backgroundColor: Colors.white,
         title: Text("Edit Profile",
-        style: Theme.of(context).textTheme.headline1,
+        style: Theme.of(context).textTheme.headline2,
         ),
         centerTitle: true,
       ),

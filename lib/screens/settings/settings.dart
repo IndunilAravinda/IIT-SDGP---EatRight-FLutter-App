@@ -13,7 +13,7 @@ class SettingsScreen extends StatelessWidget {
         ),
         backgroundColor: Colors.white,
         title: Text("Settings",
-        style: Theme.of(context).textTheme.headline1,
+        style: Theme.of(context).textTheme.headline2,
         ),
         centerTitle: true,
       ),
