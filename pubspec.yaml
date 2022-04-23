@@ -34,16 +34,24 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   checkbox_grouped: ^1.8.0
   cupertino_icons: ^1.0.2
+  syncfusion_flutter_charts: ^20.1.50
   firebase_core: ^1.14.0
   firebase_core_web: ^1.6.1
 
   # Firebase
   firebase_auth: ^3.3.4
   smooth_page_indicator: ^1.0.0+2
+  shared_preferences: ^2.0.13
+  flutter_svg: ^1.0.3
+  http: ^0.13.4
+  url_launcher: ^6.0.20
+  cloud_firestore: ^3.1.13
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  mockito: ^5.0.0
+  build_runner: ^2.1.8
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -66,6 +74,18 @@ flutter:
   assets:
     - assets/images/eiliv-sonas-aceron-ZuIDLSz3XLg-unsplash.jpg
     - assets/images/Profile-Pic-Icon.png
+    - assets/images/welcome_page.jpg
+    - assets/images/launcher_icon.png
+    - assets/images/Onboarding_Image1.png
+    - assets/images/Onboarding_Image2.png
+    - assets/images/Onboarding_Image3.png
+    - assets/images/Onboarding_Image4.png
+    - assets/icons/User Icon.svg
+    - assets/icons/Settings.svg
+    - assets/icons/Question mark.svg
+    - assets/icons/Log out.svg
+    - assets/icons/Camera Icon.svg
+    - assets/images/ProfilePic.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

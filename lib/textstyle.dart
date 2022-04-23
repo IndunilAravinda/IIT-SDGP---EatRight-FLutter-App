@@ -81,8 +81,8 @@ const TextStyle bodytext = TextStyle(
 const TextStyle Continue = TextStyle(
     fontFamily: 'Poppins',
     color: Colors.white,
-    fontWeight: FontWeight.w900,
-    fontSize: 23);
+    fontWeight: FontWeight.w600,
+    fontSize: 20);
 
 const TextStyle whole30 = TextStyle(
   fontFamily: 'Poppins',
