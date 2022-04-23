@@ -86,6 +86,10 @@ flutter:
     - assets/icons/Log out.svg
     - assets/icons/Camera Icon.svg
     - assets/images/ProfilePic.jpg
+    - assets/icons/mealplate.svg
+    - assets/icons/pawn.svg
+    - assets/icons/Progress-Chart-Loss.svg
+    - assets/icons/eatright.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
