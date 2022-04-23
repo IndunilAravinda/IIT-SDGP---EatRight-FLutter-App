@@ -19,6 +19,9 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget> {
   late TextEditingController textController1;
   late TextEditingController textController2;
   late TextEditingController textController3;
+  late TextEditingController ageController;
+  late TextEditingController weightController;
+  late TextEditingController heightController;
   late bool passwordVisibility;
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final items = ['Male', 'Female'];
@@ -30,6 +33,10 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget> {
     textController1 = TextEditingController(); // username
     textController2 = TextEditingController(); // email
     textController3 = TextEditingController(); //
+    ageController = TextEditingController(); //
+    weightController = TextEditingController(); //
+    heightController = TextEditingController(); //
+
     passwordVisibility = false;
   }
 
@@ -40,6 +47,9 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget> {
     textController1.dispose();
     textController2.dispose();
     textController3.dispose();
+    ageController.dispose();
+    weightController.dispose();
+    heightController.dispose();
   }
 
   @override
@@ -197,7 +207,7 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget> {
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(200, 0, 10, 0),
                   child: TextFormField(
-                    //controller: textController6,
+                    // controller: ageController,
                     obscureText: false,
                     decoration: InputDecoration(
                       hintText: 'Age',
@@ -229,7 +239,7 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget> {
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(10, 0, 200, 0),
                   child: TextFormField(
-                    controller: textController1,
+                    // controller: textController1,
                     obscureText: false,
                     decoration: InputDecoration(
                       hintText: 'Height (cm)',
@@ -261,7 +271,7 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget> {
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(200, 0, 10, 0),
                   child: TextFormField(
-                    controller: textController2,
+                    // controller: textController2,
                     obscureText: false,
                     decoration: InputDecoration(
                       hintText: 'Weight (kg)',

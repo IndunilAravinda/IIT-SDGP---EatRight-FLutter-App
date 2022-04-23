@@ -35,6 +35,31 @@ class AuthMethods {
         });
         res = "Success :)";
       }
+    } on FirebaseAuthException catch (err) {
+      if (err.code == 'invalid-email') {
+        res = "There is something wrong with this email";
+      } else if (err.code == 'weak-password') {
+        res = "Please try a stronger password";
+      }
+    } catch (err) {
+      res = err.toString();
+    }
+    return res;
+  }
+
+  // loggin in users
+  Future<String> loginUser(
+      {required String email, required String password}) async {
+    String res = "There is an error :(";
+
+    try {
+      if (email.isNotEmpty || password.isNotEmpty) {
+        await _auth.signInWithEmailAndPassword(
+            email: email, password: password);
+        res = "success  :)";
+      } else {
+        res = "Please fill all the textboxes";
+      }
     } catch (err) {
       res = err.toString();
     }

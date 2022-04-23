@@ -1,5 +1,6 @@
 // ignore_for_file: deprecated_member_use
 
+import 'package:eatright/loginPageResources/auth_methods.dart';
 import 'package:eatright/screens/mainNavigationPage.dart';
 import 'package:eatright/screens/signup_screen.dart';
 import 'package:eatright/textstyle.dart';
@@ -23,6 +24,31 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
     emailTextFieldController = TextEditingController();
     passwordTextFieldController = TextEditingController();
     passwordTextFieldVisibility = false;
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    emailTextFieldController.dispose();
+    passwordTextFieldController.dispose();
+  }
+
+  // login user function
+
+  loginUser() async {
+    String res = await AuthMethods().loginUser(
+        email: emailTextFieldController.text,
+        password: passwordTextFieldController.text);
+    if (res == "success  :)") {
+      //go to home
+      await Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const BottomNavigation(),
+          // loginUser();
+        ),
+      );
+    }
   }
 
   @override
@@ -66,7 +92,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                       borderRadius: BorderRadius.circular(25),
                     ),
                     filled: true,
-                    contentPadding: const EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                    contentPadding:
+                        const EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                   ),
                   keyboardType: TextInputType.emailAddress,
                 ),
@@ -103,7 +130,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                       borderRadius: BorderRadius.circular(20),
                     ),
                     filled: true,
-                    contentPadding: const EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                    contentPadding:
+                        const EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                     suffixIcon: InkWell(
                       onTap: () => setState(
                         () => passwordTextFieldVisibility =
@@ -135,9 +163,15 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                 width: 250,
                 height: 50,
                 child: RaisedButton(
-                  onPressed: () async {await 
-                    Navigator.push(context,MaterialPageRoute(builder: (context) => const BottomNavigation(),
-                    ),);
+                  onPressed: () async {
+                    loginUser();
+                    // await Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //     builder: (context) => const BottomNavigation(),
+                    //     // loginUser();
+                    //   ),
+                    // );
                   },
                   padding: EdgeInsets.zero,
                   shape: const RoundedRectangleBorder(
@@ -185,6 +219,4 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
       ),
     );
   }
-
-  Future LogIn() async {}
 }
