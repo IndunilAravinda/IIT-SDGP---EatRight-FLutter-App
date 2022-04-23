@@ -36,14 +36,15 @@ class Body extends StatelessWidget {
             icon: "assets/icons/Question mark.svg",
             press: () {},
           ),
-          ProfileMenu(
+          /*ProfileMenu(
             text: "Log Out",
             icon: "assets/icons/Log out.svg",
             press: () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => WelcomePageWidget()));
             },
-          ),
+          ),*/
+          
         ],
       ),
     );
