@@ -90,6 +90,7 @@ flutter:
     - assets/icons/pawn.svg
     - assets/icons/Progress-Chart-Loss.svg
     - assets/icons/eatright.svg
+    - assets/images/Grouppic.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

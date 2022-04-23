@@ -129,3 +129,41 @@ const TextStyle Checkbox2 = TextStyle(
   wordSpacing: 2,
   fontSize: 26,
 );
+
+const TextStyle aboutpage = TextStyle(
+  fontFamily: 'Poppins',
+  color: Colors.white,
+  fontSize: 22,
+);
+const TextStyle aboutEatRight = TextStyle(
+  fontFamily: 'Poppins',
+  fontSize: 25,
+  fontWeight: FontWeight.w500,
+);
+const TextStyle aboutEatRighttext = TextStyle(
+  fontFamily: 'Poppins',
+  fontWeight: FontWeight.w300,
+);
+const TextStyle ourteam = TextStyle(
+  fontFamily: 'Poppins',
+  fontSize: 25,
+  fontWeight: FontWeight.w500,
+);
+const TextStyle IITmodole = TextStyle(
+  fontFamily: 'Poppins',
+  fontSize: 25,
+  fontWeight: FontWeight.w500,
+);
+const TextStyle Credits = TextStyle(
+  fontFamily: 'Poppins',
+  fontSize: 25,
+  fontWeight: FontWeight.w500,
+);
+const TextStyle Credittext = TextStyle(
+  fontFamily: 'Poppins',
+  fontSize: 12,
+);
+const TextStyle Secondtext = TextStyle(
+  fontFamily: 'Poppins',
+  fontSize: 12,
+);

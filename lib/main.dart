@@ -1,4 +1,5 @@
 import 'package:eatright/routes.dart';
+import 'package:eatright/screens/aboutUs/about_us.dart';
 import 'package:eatright/screens/allergiesAndCuisines/components/AllergiesAndCuisines.dart';
 import 'package:eatright/screens/createprofilepage.dart';
 import 'package:eatright/screens/generateMeal/generate.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData( 
+      theme: ThemeData(
         primaryColor: const Color(0xff009688),
         fontFamily: 'Poppins',
         textTheme: const TextTheme(
@@ -43,7 +44,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: WeeklyUpdatePage.routeName,
+      initialRoute: AboutPageWidget.routeName,
       routes: routes,
     );
   }
