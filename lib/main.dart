@@ -7,6 +7,7 @@ import 'package:eatright/screens/login_screen.dart';
 import 'package:eatright/screens/mainNavigationPage.dart';
 import 'package:eatright/screens/signup_screen.dart';
 import 'package:eatright/screens/splash_screen.dart';
+import 'package:eatright/screens/weeklyUpdates/weekly_updates.dart';
 import 'package:eatright/screens/welcome_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -42,7 +43,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: SplashScreen.routeName,
+      initialRoute: WeeklyUpdatePage.routeName,
       routes: routes,
     );
   }

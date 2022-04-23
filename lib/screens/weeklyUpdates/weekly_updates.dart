@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
+class WeeklyUpdatePage extends StatelessWidget {
+  static String routeName = "/weeklyUpdate";
   @override
   Widget build(BuildContext context) {
     return Scaffold(

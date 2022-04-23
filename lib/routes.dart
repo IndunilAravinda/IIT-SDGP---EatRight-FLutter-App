@@ -7,6 +7,7 @@ import 'package:eatright/screens/settings/settings.dart';
 import 'package:eatright/screens/signup_screen.dart';
 import 'package:eatright/screens/splash_screen.dart';
 import 'package:eatright/screens/userProfile/userProfile.dart';
+import 'package:eatright/screens/weeklyUpdates/weekly_updates.dart';
 import 'package:eatright/screens/welcome_screen.dart';
 import 'package:eatright/screens/mainNavigationPage.dart';
 import 'package:flutter/widgets.dart';
@@ -23,4 +24,5 @@ final Map<String, WidgetBuilder> routes = {
   SettingsScreen.routeName:(context) => SettingsScreen(),
   EditProfileScreen.routeName:(context) => EditProfileScreen(),
   GenerateMealPage.routeName:(context) => GenerateMealPage(),
+  WeeklyUpdatePage.routeName:(context) => WeeklyUpdatePage(),
 };
