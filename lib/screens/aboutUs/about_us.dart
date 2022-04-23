@@ -16,7 +16,7 @@ class _AboutPageWidgetState extends State<AboutPageWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        //backgroundColor: FlutterFlowTheme.of(context).primaryColor,
+        backgroundColor: Color(0xFFB2DFDB),
         automaticallyImplyLeading: false,
         title: Text(
           'About Page',
