@@ -155,7 +155,7 @@ class _AboutPageWidgetState extends State<AboutPageWidget> {
                               dotWidth: 14,
                               dotHeight: 14,
                               dotColor: Color(0xFF9E9E9E),
-                              activeDotColor: Color(0xFF3F51B5),
+                              activeDotColor: Color(0xFF00796B),
                               paintStyle: PaintingStyle.fill,
                             ),
                           ),
