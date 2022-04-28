@@ -2,16 +2,14 @@
 
 import 'package:flutter/material.dart';
 
-<<<<<<< Updated upstream
 class WeeklyUpdatePage extends StatelessWidget {
   static String routeName = "/weeklyUpdate";
-=======
-import '../onboarding/onboarding.dart';
 
-class HomePage extends StatelessWidget {
-  TextEditingController _heightController = TextEditingController();
+  void Submit() {
+    //Define function here
+    print("Submitted");
+  }
 
->>>>>>> Stashed changes
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,8 +23,8 @@ class HomePage extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Column(children: const [
-          TextField(
+        child: Column(children: [
+          const TextField(
             decoration: InputDecoration(
                 hintText: "Enter your Updated Weight",
                 labelText: "Weight",
@@ -37,7 +35,7 @@ class HomePage extends StatelessWidget {
             keyboardType: TextInputType.number,
             obscureText: false,
           ),
-          TextField(
+          const TextField(
             decoration: InputDecoration(
                 hintText: "Enter your Updated Height",
                 labelText: "Height",
@@ -49,10 +47,14 @@ class HomePage extends StatelessWidget {
             obscureText: false,
           ),
           RaisedButton(
-              onPressed: () async {},
               textColor: Colors.white,
               color: Colors.teal,
-              child: Text(
+              //Submit function goes here
+              onPressed: () {
+                Submit();
+                Navigator.pop(context);
+              },
+              child: const Text(
                 'Submit',
                 style: TextStyle(fontSize: 20),
               ))
