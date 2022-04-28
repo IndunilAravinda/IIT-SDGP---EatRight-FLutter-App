@@ -20,7 +20,7 @@ class MealCard extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
         height: 75, 
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: Color.fromARGB(255, 81, 198, 188),
           borderRadius: BorderRadius.circular(25),
           boxShadow: [
             BoxShadow(
@@ -43,6 +43,7 @@ class MealCard extends StatelessWidget {
                   title,
                   style: const TextStyle(
                     fontSize: 16,
+                    color: Colors.white,
                   ),
                   overflow: TextOverflow.ellipsis,
                   maxLines: 2,

@@ -13,15 +13,7 @@ class GenerateMealPage extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("assets/images/welcome_page.jpg"),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: Body(),
-      ),
+      body: Body(),
     );
   }
 }
