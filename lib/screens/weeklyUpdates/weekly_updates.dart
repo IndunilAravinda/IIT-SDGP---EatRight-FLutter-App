@@ -24,6 +24,7 @@ class WeeklyUpdatePage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(children: [
+          const SizedBox(height: 30),
           const TextField(
             decoration: InputDecoration(
                 hintText: "Enter your Updated Weight",
@@ -35,6 +36,7 @@ class WeeklyUpdatePage extends StatelessWidget {
             keyboardType: TextInputType.number,
             obscureText: false,
           ),
+          const SizedBox(height: 30),
           const TextField(
             decoration: InputDecoration(
                 hintText: "Enter your Updated Height",
@@ -46,18 +48,22 @@ class WeeklyUpdatePage extends StatelessWidget {
             keyboardType: TextInputType.number,
             obscureText: false,
           ),
+          const SizedBox(height: 20),
           RaisedButton(
               textColor: Colors.white,
-              color: Colors.teal,
-              //Submit function goes here
               onPressed: () {
                 Submit();
                 Navigator.pop(context);
               },
-              child: const Text(
+              child: Text(
                 'Submit',
-                style: TextStyle(fontSize: 20),
-              ))
+                style: Theme.of(context).textTheme.headline3,
+              ),
+              color: const Color.fromARGB(255, 75, 180, 171),
+              padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+              elevation: 1,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+            )
         ]),
       ),
     );

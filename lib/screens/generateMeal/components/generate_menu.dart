@@ -64,7 +64,7 @@ class GenerateMenuState extends State {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
       ),
       Text(
-        'Week ' + week.toString() + '| Day ' + day.toString(),
+        'Week ' + week.toString() + ' | Day ' + (day+1).toString(),
         style: Theme.of(context).textTheme.headline4,
       ),
       const SizedBox(height: 30),
