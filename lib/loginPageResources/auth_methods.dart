@@ -70,4 +70,31 @@ class AuthMethods {
   Future<void> logOut() async {
     await _auth.signOut();
   }
+
+  // entering new value for height and weight
+
+  newValue({
+    required String height,
+    required String weight,
+  }) async {
+    String res = "There is an error :(";
+
+    try {
+      if (height.isNotEmpty || weight.isNotEmpty) {
+        // Register the new user
+
+        // Add user details to the database
+
+        var cred;
+        _firestore.collection('users').doc(cred.user!.uid).set({
+          'weight': 0,
+          'height': 0,
+        });
+        res = "Success :)";
+      }
+    } catch (err) {
+      res = err.toString();
+    }
+    return res;
+  }
 }

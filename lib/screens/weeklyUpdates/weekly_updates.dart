@@ -1,12 +1,24 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
+import '../../loginPageResources/auth_methods.dart';
 
 class WeeklyUpdatePage extends StatelessWidget {
   static String routeName = "/weeklyUpdate";
 
-  void Submit() {
+  Future<void> Submit() async {
     //Define function here
+
+    var textController2;
+    var textController1;
+    String res = await AuthMethods().newValue(
+      weight: textController1.text,
+      height: textController2.text,
+    );
+
     print("Submitted");
   }
 
@@ -50,20 +62,21 @@ class WeeklyUpdatePage extends StatelessWidget {
           ),
           const SizedBox(height: 20),
           RaisedButton(
-              textColor: Colors.white,
-              onPressed: () {
-                Submit();
-                Navigator.pop(context);
-              },
-              child: Text(
-                'Submit',
-                style: Theme.of(context).textTheme.headline3,
-              ),
-              color: const Color.fromARGB(255, 75, 180, 171),
-              padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-              elevation: 1,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-            )
+            textColor: Colors.white,
+            onPressed: () {
+              Submit();
+              Navigator.pop(context);
+            },
+            child: Text(
+              'Submit',
+              style: Theme.of(context).textTheme.headline3,
+            ),
+            color: const Color.fromARGB(255, 75, 180, 171),
+            padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+            elevation: 1,
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+          )
         ]),
       ),
     );
