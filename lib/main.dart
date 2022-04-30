@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: GenerateMealPage.routeName,
+      initialRoute: SplashScreen.routeName,
       routes: routes,
     );
   }
