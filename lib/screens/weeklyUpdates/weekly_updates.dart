@@ -6,19 +6,36 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 import '../../loginPageResources/auth_methods.dart';
 
-class WeeklyUpdatePage extends StatelessWidget {
+class WeeklyUpdatePage extends StatefulWidget {
   static String routeName = "/weeklyUpdate";
+  @override
+  _WeeklyUpdatePageState createState() => _WeeklyUpdatePageState();
+}
+
+class _WeeklyUpdatePageState extends State<WeeklyUpdatePage> {
+  late TextEditingController weightController;
+  late TextEditingController heightController;
+
+  @override
+  void initState() {
+    super.initState();
+    weightController = TextEditingController();
+    heightController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    weightController.dispose();
+    heightController.dispose();
+  }
 
   Future<void> Submit() async {
     //Define function here
-
-    var textController2;
-    var textController1;
     String res = await AuthMethods().newValue(
-      weight: textController1.text,
-      height: textController2.text,
+      weight: int.parse(weightController.text),
+      height: int.parse(heightController.text),
     );
-
     print("Submitted");
   }
 
@@ -37,8 +54,9 @@ class WeeklyUpdatePage extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Column(children: [
           const SizedBox(height: 30),
-          const TextField(
-            decoration: InputDecoration(
+          TextField(
+            controller: weightController,
+            decoration: const InputDecoration(
                 hintText: "Enter your Updated Weight",
                 labelText: "Weight",
                 labelStyle: TextStyle(fontSize: 30, color: Colors.black),
@@ -49,8 +67,9 @@ class WeeklyUpdatePage extends StatelessWidget {
             obscureText: false,
           ),
           const SizedBox(height: 30),
-          const TextField(
-            decoration: InputDecoration(
+          TextField(
+            controller: heightController,
+            decoration: const InputDecoration(
                 hintText: "Enter your Updated Height",
                 labelText: "Height",
                 labelStyle: TextStyle(fontSize: 30, color: Colors.black),

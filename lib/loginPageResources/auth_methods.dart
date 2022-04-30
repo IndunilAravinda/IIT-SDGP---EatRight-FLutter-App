@@ -12,6 +12,9 @@ class AuthMethods {
     required String username,
     required String email,
     required String password,
+    required int age,
+    required int weight,
+    required int height,
   }) async {
     String res = "There is an error :(";
 
@@ -27,9 +30,9 @@ class AuthMethods {
           'username': username,
           'uid': cred.user!.uid,
           'email': email,
-          'age': 0,
-          'weight': 0,
-          'height': 0,
+          'age': age,
+          'weight': weight,
+          'height': height,
           'gender': "",
           'weeks': [],
         });
@@ -44,6 +47,7 @@ class AuthMethods {
     } catch (err) {
       res = err.toString();
     }
+    //print(res);
     return res;
   }
 
@@ -74,21 +78,24 @@ class AuthMethods {
   // entering new value for height and weight
 
   newValue({
-    required String height,
-    required String weight,
+    required int height,
+    required int weight,
   }) async {
     String res = "There is an error :(";
 
     try {
-      if (height.isNotEmpty || weight.isNotEmpty) {
-        // Register the new user
-
+      //if(height.isNotNull || weight.isNotNull)
+      if (!height.isNaN || !weight.isNaN) {
         // Add user details to the database
+        User? currentUser = _auth.currentUser;
 
-        var cred;
-        _firestore.collection('users').doc(cred.user!.uid).set({
-          'weight': 0,
-          'height': 0,
+        //_firestore.collection('users').doc(currentUser!.uid).get({'weeks'});
+
+        //Update user database with new weight & height
+        _firestore.collection('users').doc(currentUser!.uid).update({
+          'weight': weight,
+          'height': height,
+          //'weeks' : weight,
         });
         res = "Success :)";
       }

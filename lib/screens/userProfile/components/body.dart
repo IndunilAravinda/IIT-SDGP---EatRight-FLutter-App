@@ -1,3 +1,4 @@
+import 'package:eatright/screens/aboutUs/about_us.dart';
 import 'package:eatright/screens/welcome_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -35,7 +36,10 @@ class Body extends StatelessWidget {
           ProfileMenu(
             text: "About us",
             icon: "assets/icons/Question mark.svg",
-            press: () {},
+            press: () {
+               Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => AboutPageWidget()));
+            },
           ),
           /*ProfileMenu(
             text: "Log Out",
