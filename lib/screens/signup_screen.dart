@@ -203,16 +203,16 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget> {
                 ),
               ),
               Align(
-                alignment: AlignmentDirectional(0.84, 0.15),
+                alignment: const AlignmentDirectional(0.84, 0.15),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(200, 0, 10, 0),
-                  child: TextFormField(
-                    // controller: ageController,
+                  padding: const EdgeInsetsDirectional.fromSTEB(200, 0, 10, 0),
+                  child: TextField(
+                    controller: ageController,
                     obscureText: false,
                     decoration: InputDecoration(
                       hintText: 'Age',
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: Color(0xFF999999),
                           width: 1,
                         ),
@@ -238,20 +238,20 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget> {
                 alignment: AlignmentDirectional(-1.56, 0.4),
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(10, 0, 200, 0),
-                  child: TextFormField(
-                    // controller: textController1,
+                  child: TextField(
+                    controller: heightController,
                     obscureText: false,
                     decoration: InputDecoration(
                       hintText: 'Height (cm)',
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: Color(0xFF999999),
                           width: 1,
                         ),
                         borderRadius: BorderRadius.circular(20),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: Color(0xFF999999),
                           width: 1,
                         ),
@@ -259,7 +259,7 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget> {
                       ),
                       filled: true,
                       contentPadding:
-                          EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                          const EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                     ),
                     //style: FlutterFlowTheme.of(context).bodyText1,
                     keyboardType: TextInputType.number,
@@ -270,20 +270,20 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget> {
                 alignment: AlignmentDirectional(-1.08, 0.4),
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(200, 0, 10, 0),
-                  child: TextFormField(
-                    // controller: textController2,
+                  child: TextField(
+                    controller: weightController,
                     obscureText: false,
                     decoration: InputDecoration(
                       hintText: 'Weight (kg)',
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: Color(0xFF999999),
                           width: 1,
                         ),
                         borderRadius: BorderRadius.circular(20),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: Color(0xFF999999),
                           width: 1,
                         ),
@@ -310,15 +310,11 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget> {
                       String res = await AuthMethods().signUpUser(
                           username: textController1.text,
                           email: textController2.text,
-                          password: textController3.text);
-
-                      // await Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //     builder: (context) => OnboardingScreen(),
-                      //   ),
-                      // );
-
+                          password: textController3.text,
+                          age: int.parse(ageController.text),
+                          weight: int.parse(weightController.text),
+                          height: int.parse(heightController.text)
+                      );
                       print(res);
 
                       if (res == "Success :)") {

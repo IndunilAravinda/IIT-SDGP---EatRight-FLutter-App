@@ -1,12 +1,41 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-class WeeklyUpdatePage extends StatelessWidget {
+import '../../loginPageResources/auth_methods.dart';
+
+class WeeklyUpdatePage extends StatefulWidget {
   static String routeName = "/weeklyUpdate";
+  @override
+  _WeeklyUpdatePageState createState() => _WeeklyUpdatePageState();
+}
 
-  void Submit() {
+class _WeeklyUpdatePageState extends State<WeeklyUpdatePage> {
+  late TextEditingController weightController;
+  late TextEditingController heightController;
+
+  @override
+  void initState() {
+    super.initState();
+    weightController = TextEditingController();
+    heightController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    weightController.dispose();
+    heightController.dispose();
+  }
+
+  Future<void> Submit() async {
     //Define function here
+    String res = await AuthMethods().newValue(
+      weight: int.parse(weightController.text),
+      height: int.parse(heightController.text),
+    );
     print("Submitted");
   }
 
@@ -25,8 +54,9 @@ class WeeklyUpdatePage extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Column(children: [
           const SizedBox(height: 30),
-          const TextField(
-            decoration: InputDecoration(
+          TextField(
+            controller: weightController,
+            decoration: const InputDecoration(
                 hintText: "Enter your Updated Weight",
                 labelText: "Weight",
                 labelStyle: TextStyle(fontSize: 30, color: Colors.black),
@@ -37,8 +67,9 @@ class WeeklyUpdatePage extends StatelessWidget {
             obscureText: false,
           ),
           const SizedBox(height: 30),
-          const TextField(
-            decoration: InputDecoration(
+          TextField(
+            controller: heightController,
+            decoration: const InputDecoration(
                 hintText: "Enter your Updated Height",
                 labelText: "Height",
                 labelStyle: TextStyle(fontSize: 30, color: Colors.black),
@@ -50,20 +81,21 @@ class WeeklyUpdatePage extends StatelessWidget {
           ),
           const SizedBox(height: 20),
           RaisedButton(
-              textColor: Colors.white,
-              onPressed: () {
-                Submit();
-                Navigator.pop(context);
-              },
-              child: Text(
-                'Submit',
-                style: Theme.of(context).textTheme.headline3,
-              ),
-              color: const Color.fromARGB(255, 75, 180, 171),
-              padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-              elevation: 1,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-            )
+            textColor: Colors.white,
+            onPressed: () {
+              Submit();
+              Navigator.pop(context);
+            },
+            child: Text(
+              'Submit',
+              style: Theme.of(context).textTheme.headline3,
+            ),
+            color: const Color.fromARGB(255, 75, 180, 171),
+            padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+            elevation: 1,
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+          )
         ]),
       ),
     );
