@@ -26,23 +26,26 @@ class PalPredictModel {
 
   usePredictModel() async {
     print("Predict method works perfectly Fine");
-    initWithLocalModel();
-    if (!(customeModel != null)) {
-      doanloadLatestModel();
-    }
+    doanloadLatestModel();
+    // initWithLocalModel();
+    // if (!(customeModel != null)) {
+    //   doanloadLatestModel();
+    // }
+    print("Predict method works perfectly Fine");
+
     final interpreter = Interpreter.fromFile(customeModel!.file);
 
     print(interpreter);
     var input = [
-      [1, 19, 56.778919, 1.630953, 21.345399, 1530.148, 58.520162]
+      [1.0, 19.0, 56.778919, 1.630953, 21.345399, 1530.148, 58.520162]
     ];
     var output = List.filled(1 * 1, 0).reshape([1, 1]);
 
-    // interpreter.run(input, output);
+    interpreter.run(input, output);
 
     print("Model works perfectly Fine");
     print(output);
-    // interpreter.close();
+    interpreter.close();
   }
 }
 //   // Running the model
