@@ -1,9 +1,12 @@
 import 'dart:convert';
+import 'package:eatright/screens/generateMeal/resources/pal_predict_model.dart';
 import 'package:http/http.dart' as http;
 import 'package:eatright/screens/generateMeal/components/meal_model.dart';
+import 'package:eatright/screens/generateMeal/resources/pal_predict_model.dart';
 
 class MealApi {
   static Future<List<Meal>> getMeal() async {
+    //get meal function should have a required parameter of Total Calories
     var httpsUri = Uri(
         scheme: 'https',
         host: 'api.spoonacular.com',
@@ -32,9 +35,17 @@ class MealApi {
     }*/
     //print(_temp.toString());
 
+// Risky test of the ml model
+
+    // int pal = palPredictModel().predictPAL() as int;
+
+    PalPredictModel prediction = new PalPredictModel();
+    prediction.usePredictModel();
+    print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+
     for (var i in data['meals']) {
-          _temp.add(i);
-        }
+      _temp.add(i);
+    }
     return Meal.MealFromSnapshot(_temp);
   }
 }
