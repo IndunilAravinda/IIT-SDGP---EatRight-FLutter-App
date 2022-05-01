@@ -4,6 +4,7 @@ import 'package:eatright/loginPageResources/auth_methods.dart';
 import 'package:eatright/screens/mainNavigationPage.dart';
 import 'package:eatright/screens/signup_screen.dart';
 import 'package:eatright/textstyle.dart';
+import 'package:eatright/utils/utils.dart';
 import 'package:flutter/material.dart';
 
 class LoginPageWidget extends StatefulWidget {
@@ -17,6 +18,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
   late TextEditingController passwordTextFieldController;
   late bool passwordTextFieldVisibility;
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  bool _isLoading = false;
 
   @override
   void initState() {
@@ -36,9 +38,17 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
   // login user function
 
   loginUser() async {
+    setState(() {
+      _isLoading = true;
+    });
+
     String res = await AuthMethods().loginUser(
         email: emailTextFieldController.text,
         password: passwordTextFieldController.text);
+
+    setState(() {
+      _isLoading = false;
+    });
     if (res == "success  :)") {
       //go to home
       await Navigator.push(
@@ -48,6 +58,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
           // loginUser();
         ),
       );
+    } else {
+      showSnackBar(res, context);
     }
   }
 
@@ -181,10 +193,16 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                   child: Container(
                     decoration: const BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(25))),
-                    child: const Text(
-                      "Log In",
-                      style: loginButton,
-                    ),
+                    child: _isLoading
+                        ? const Center(
+                            child: CircularProgressIndicator(
+                              color: Colors.white,
+                            ),
+                          )
+                        : const Text(
+                            "Log In",
+                            style: loginButton,
+                          ),
                   ),
                 ),
               ),

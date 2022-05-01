@@ -6,6 +6,10 @@ import 'package:eatright/screens/generateMeal/resources/pal_predict_model.dart';
 
 class MealApi {
   static Future<List<Meal>> getMeal() async {
+// model implementation
+    PalPredictModel prediction = new PalPredictModel();
+    int pal = prediction.usePredictModel();
+
     //get meal function should have a required parameter of Total Calories
     var httpsUri = Uri(
         scheme: 'https',
@@ -38,10 +42,6 @@ class MealApi {
 // Risky test of the ml model
 
     // int pal = palPredictModel().predictPAL() as int;
-
-    PalPredictModel prediction = new PalPredictModel();
-    prediction.usePredictModel();
-    print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 
     for (var i in data['meals']) {
       _temp.add(i);

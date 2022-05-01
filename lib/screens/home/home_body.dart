@@ -2,6 +2,7 @@ import 'package:eatright/screens/generateMeal/generate.dart';
 import 'package:eatright/screens/progress/progress.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import '../aboutUs/about_us.dart';
 import '../editProfile/editPro.dart';
 
 class homeBody extends StatelessWidget {
@@ -43,7 +44,7 @@ class homeBody extends StatelessWidget {
                                 )),
                   ),
                   SizedBox(
-                    height: 250,
+                    height: 200,
                   ),
                   Expanded(
                     child: GridView.count(
@@ -88,8 +89,14 @@ class homeBody extends StatelessWidget {
                         HomeCard(
                           svgSrc: "assets/icons/eatright.svg",
                           title: "About Developers\n",
-                          clickPress: () {},
+                          clickPress: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => AboutPageWidget()));
+                          },
                         ),
+                        Spacer()
                       ],
                     ),
                   ),
@@ -138,7 +145,7 @@ class HomeCard extends StatelessWidget {
               Spacer(),
               SvgPicture.asset(
                 svgSrc,
-                height: 90,
+                height: 50,
               ),
               Spacer(),
               Text(

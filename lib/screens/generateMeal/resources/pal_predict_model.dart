@@ -45,7 +45,9 @@ class PalPredictModel {
 
     print("Model works perfectly Fine");
     print(output);
+
     interpreter.close();
+    return output.elementAt(0);
   }
 }
 //   // Running the model
