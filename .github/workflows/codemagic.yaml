@@ -1,0 +1,68 @@
+# Automatically generated on 2022-05-01 UTC from https://codemagic.io/app/6260bdff22f50fa0e02d5612/settings
+# Note that this configuration is not an exact match to UI settings. Review and adjust as necessary.
+
+workflows:
+  default-workflow:
+    name: Default Workflow
+    max_build_duration: 60
+    environment:
+      flutter: stable
+      xcode: latest
+      cocoapods: default
+    triggering:
+      events:
+        - push
+      branch_patterns:
+        - pattern: master
+          include: true
+          source: false
+      tag_patterns:
+        - pattern: '*'
+          include: true
+    scripts:
+      - flutter emulators --launch emulator
+      - |
+        # set up debug keystore
+        rm -f ~/.android/debug.keystore
+        keytool -genkeypair \
+          -alias androiddebugkey \
+          -keypass android \
+          -keystore ~/.android/debug.keystore \
+          -storepass android \
+          -dname 'CN=Android Debug,O=Android,C=US' \
+          -keyalg 'RSA' \
+          -keysize 2048 \
+          -validity 10000
+      - |
+        # set up local properties
+        echo "flutter.sdk=$HOME/programs/flutter" > "$FCI_BUILD_DIR/android/local.properties"
+      - flutter packages pub get
+      - flutter drive --target=test_driver/main.dart
+      - flutter test
+      - flutter build apk --release
+      - find . -name "Podfile" -execdir pod install \;
+      - flutter build ios --release --no-codesign
+    artifacts:
+      - build/**/outputs/apk/**/*.apk
+      - build/**/outputs/bundle/**/*.aab
+      - build/**/outputs/**/mapping.txt
+      - build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+      - '*.snap'
+      - build/windows/**/*.msix
+      - flutter_drive.log
+    publishing:
+      email:
+        recipients:
+          - teamamiogs@gmail.com
+      firebase:
+        firebase_service_account: Encrypted(Z0FBQUFBQmlidDY5TVhFVkRIeDFZRWU4dUNvbUdibVRZMEYtOW1JeEFkNGVNZGc4WUY1bTl6OTVWdVNyU2ZPZUc2LXFPUWJNb2tRWXVsMEFYcFJyLXFtc2VIWFV2TkdDbHp5OE1TSVFYUHNjSllPcmZHaEZaNnNNd1pNcnFNM0tDRXM5SVQ5OE45QmM4RDJ0eEhjSFE2eGVIcUpseWpLSWJkY2duQThzc2M2eGJJRFhkX1JSRWt1SVpvQU40aTJlLThKWGZnTHhYRU5GdWFVblVXVF9RNmhlZU5VTEwxaURiT0dHdk4tWDI2OHNRUG44dVVjQjBaeHJ3ZXR6bmxySjJzMDFXQlZfeEoxbWpQd1ppQi1sNDd5V3hodUQwMTk1VjBUOTRETS13Z05GU2pxZ1Vod3RDdnM0bHNiYmRGSlY5ak5QTTZsZVFMcUV6eXU2aFRDTlZaR2tkRnJIMzVObDJPM0dueXZ6eWV0OHZfdkNwQjU5TGhQMFJyQ0xkcFZUcFJMMEt0U2tJUHp2UFhDVXRTLVlIa0tTUTdfbnNBdk93dC1NaFI0TTNyaWtOcS0xNjNUZW1CaldzY1NDV0U2ZDA2b0lsRHFYNG9SUl9vdkNmbXdVb3ZibURvQU9OQ1lkME03MWNhbFJVamZZR09vNGlnQ3VNR0JiS0JRMkJkS0VIQzdUcXR1dExiSDdqNndZVHZpOUhocEpiYk5BeG9JaEV2X3FUUXF2LTctQ1lWZTFmNWdZZjdCbi1xYl90aWw5RWRMeG9feTUwZm5Cdk8xdVlXYkRkY01BR1ZKOHVFREZ1aFRPTEcwV01oaXMxbXNJMnhsTFFjOWlNY3N6Uy1ubG5SdEhlMWxwWHhzbmZEX0l1cldZblRQU2xheWx0YUw1cVhVdzEydl94ZjU1Wmh5c05LZi1JcUNVNTNNcXpEOVVlMmxxX0FuZXBsU3cxaVVMX1BSQUVzUmF2aHJmWldLY2tJZ01KUDdUcnd2bG5JUjJndUJTODI2TXBjN2hidktGR3hIQU1wT1FoN3hCN2ZYdUVyZlpLR2N2ODJkaGY2Q2ZXWnB1YnZUSlVXVzNidVV3NGRILWFoLXQ1eVp0QmNULThNa0paZmx1cWxmU3hGUnJIYTJUaGk4d2pmSUVnVHpPalNORGVTa1dNSjlndVkzYi1ENm56b2lKcjE5NnRaUlNYdENkSmpIemtGbU4wVWg3SnladUpHdUY0MWxsb2NUTzhaYWN5YnlYdzRrUEpOMUxuanlyOTR2LW9MMVBpV3YyWHNXNTJaTWF1LWZOVUM4QU0wUTRKUW5menVqZWdqX1hkazFmeXdHa2JkOW1nUUdzdW1LX25zVFN0dF9zckJzRWVxcmFaZUlJOXdrOTAwcXhRdmlEY0x2RkNMaTNSSW5yZFZFR3lNa2N5UGpkZ0JwT2oxUTZHVUZfTGxMUWtUS0RBZUpaSjhSbHI2YVpoNDkzMVZxUHd6cG1sSGRvZFRVcTcwZWxjZW5kdWZYdDFHY2dYVzBFUGcwX0hBNUFUV1hhbWtJSUQ0OVAzWVAtZmVtazZGTFpqNTFONkVLRWptREkxblBjZWhLWmI3UjZGTkdyTU9veG4tZjR5ZUE5b0Z1cnRZUm9QdThpVy0wTjJtaGxSYUtfR1ZUZHlkSVpqMXFWcUVXYU14T3pIZVZpWVRjZDNwMEZnUWI2eDMzR3VTNmFqR3F5cjl2bFRoNzRndEdFXzdjWlN0akdVdzctNVJXYUtFbFktLUxuVGh5RUd6S25RdHEyMi1xSWNqMTdjVWx6SzZZOHN6TWpKUS1aMmtyTldLWktZNVJDU052ZDlwZE1MdTA5ekJRbnVodWVVQTd5cGpNaFNTY0FSRkhrUFlGZXlSQkVRbkF0Y0FMYmotRjNtX0NmLWY4QXF1OFdPZ2c2S0hHcUNsdEV6X1NfWmU5VGhhMXdiZ3c9)
+        ios:
+          app_id: 1:268414982944:ios:163d6798aec3c7a9e29545
+          groups:
+            - teamamiogs@gmail.com
+        android:
+          app_id: 1:268414982944:android:3c0e9f3c572e82c1e29545
+          groups:
+            - teamamiogs@gmail.com
+          artifact_type: apk

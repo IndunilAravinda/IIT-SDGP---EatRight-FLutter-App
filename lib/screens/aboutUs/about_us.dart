@@ -42,7 +42,7 @@ class _AboutPageWidgetState extends State<AboutPageWidget> {
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 60),
                         child: PageView(
-                          controller: pageViewController ??=
+                          controller: pageViewController =
                               PageController(initialPage: 0),
                           scrollDirection: Axis.vertical,
                           children: [
@@ -137,7 +137,7 @@ class _AboutPageWidgetState extends State<AboutPageWidget> {
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 50),
                           child: SmoothPageIndicator(
-                            controller: pageViewController ??=
+                            controller: pageViewController =
                                 PageController(initialPage: 0),
                             count: 3,
                             axisDirection: Axis.vertical,

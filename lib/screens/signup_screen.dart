@@ -5,6 +5,7 @@ import 'package:eatright/screens/login_screen.dart';
 import 'package:eatright/screens/createprofilepage.dart';
 import 'package:eatright/screens/onboarding/onboarding.dart';
 import 'package:eatright/textstyle.dart';
+import 'package:eatright/utils/utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +26,8 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget> {
   late bool passwordVisibility;
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final items = ['Male', 'Female'];
-  String? value;
+  late String value = "Male";
+  bool _isLoading = false;
 
   @override
   void initState() {
@@ -36,7 +38,6 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget> {
     ageController = TextEditingController(); //
     weightController = TextEditingController(); //
     heightController = TextEditingController(); //
-
     passwordVisibility = false;
   }
 
@@ -187,7 +188,7 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget> {
               Align(
                 alignment: AlignmentDirectional(-0.9, 0.15),
                 child: Container(
-                  height: 50,
+                  // height: 50,
                   width: 180,
                   padding: EdgeInsetsDirectional.fromSTEB(12, 4, 12, 4),
                   decoration: BoxDecoration(
@@ -198,21 +199,21 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget> {
                     isExpanded: true,
                     value: value,
                     items: items.map(buildMenuItem).toList(),
-                    onChanged: (value) => setState(() => this.value = value),
+                    onChanged: (value) => setState(() => this.value = value!),
                   ),
                 ),
               ),
               Align(
-                alignment: AlignmentDirectional(0.84, 0.15),
+                alignment: const AlignmentDirectional(0.84, 0.15),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(200, 0, 10, 0),
-                  child: TextFormField(
-                    // controller: ageController,
+                  padding: const EdgeInsetsDirectional.fromSTEB(270, 0, 10, 0),
+                  child: TextField(
+                    controller: ageController,
                     obscureText: false,
                     decoration: InputDecoration(
                       hintText: 'Age',
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: Color(0xFF999999),
                           width: 1,
                         ),
@@ -238,20 +239,20 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget> {
                 alignment: AlignmentDirectional(-1.56, 0.4),
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(10, 0, 200, 0),
-                  child: TextFormField(
-                    // controller: textController1,
+                  child: TextField(
+                    controller: heightController,
                     obscureText: false,
                     decoration: InputDecoration(
                       hintText: 'Height (cm)',
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: Color(0xFF999999),
                           width: 1,
                         ),
                         borderRadius: BorderRadius.circular(20),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: Color(0xFF999999),
                           width: 1,
                         ),
@@ -259,7 +260,7 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget> {
                       ),
                       filled: true,
                       contentPadding:
-                          EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                          const EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                     ),
                     //style: FlutterFlowTheme.of(context).bodyText1,
                     keyboardType: TextInputType.number,
@@ -270,20 +271,20 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget> {
                 alignment: AlignmentDirectional(-1.08, 0.4),
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(200, 0, 10, 0),
-                  child: TextFormField(
-                    // controller: textController2,
+                  child: TextField(
+                    controller: weightController,
                     obscureText: false,
                     decoration: InputDecoration(
                       hintText: 'Weight (kg)',
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: Color(0xFF999999),
                           width: 1,
                         ),
                         borderRadius: BorderRadius.circular(20),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: Color(0xFF999999),
                           width: 1,
                         ),
@@ -305,29 +306,36 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget> {
                   height: 50,
                   child: RaisedButton(
                     onPressed: () async {
+                      setState(() {
+                        _isLoading = true;
+                      });
                       // signup button action
 
                       String res = await AuthMethods().signUpUser(
                           username: textController1.text,
                           email: textController2.text,
-                          password: textController3.text);
-
-                      // await Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //     builder: (context) => OnboardingScreen(),
-                      //   ),
-                      // );
-
+                          password: textController3.text,
+                          age: int.parse(ageController.text),
+                          weight: int.parse(weightController.text),
+                          height: int.parse(heightController.text),
+                          gender: value);
                       print(res);
 
+                      setState(() {
+                        _isLoading = false;
+                      });
+
                       if (res == "Success :)") {
+                        showSnackBar(res, context);
+
                         await Navigator.push(
                           context,
                           MaterialPageRoute(
                             builder: (context) => OnboardingScreen(),
                           ),
                         );
+                      } else {
+                        showSnackBar(res, context);
                       }
                     },
                     padding: EdgeInsets.zero,
@@ -338,10 +346,16 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget> {
                     child: Container(
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.all(Radius.circular(25))),
-                      child: Text(
-                        "Sign Up",
-                        style: signUpButton,
-                      ),
+                      child: _isLoading
+                          ? const Center(
+                              child: CircularProgressIndicator(
+                                color: Colors.white,
+                              ),
+                            )
+                          : Text(
+                              "Sign Up",
+                              style: signUpButton,
+                            ),
                     ),
                   ),
                 ),

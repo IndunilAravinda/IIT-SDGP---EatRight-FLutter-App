@@ -10,19 +10,23 @@ class OnBoarding {
 
 List<OnBoarding> onboardingContents = [
   OnBoarding(
-    title: 'Welcome to EatRight',
+    title:
+        "Don't own any wearables? No Problem!\n \nCustomized meal plans to your preference.",
     image: 'assets/images/Onboarding_Image1.png',
   ),
   OnBoarding(
-    title: 'Maintain your ideal weight',
+    title:
+        "Meal planning made simple.\n \nOnly eat what you are supposed to eat!",
     image: 'assets/images/Onboarding_Image2.png',
   ),
   OnBoarding(
-    title: 'Keep track of your progress',
+    title:
+        "Quick and reliable meal plans with recipes!\n \nLet us help you take your first step to leading a healthy life!",
     image: 'assets/images/Onboarding_Image3.png',
   ),
   OnBoarding(
-    title: 'Let us be your guide!',
+    title:
+        "Your journey to a healthy lifestyle begins here!\n \nEvaluate and keep track of your eating patterns.",
     image: 'assets/images/Onboarding_Image4.png',
   ),
 ];

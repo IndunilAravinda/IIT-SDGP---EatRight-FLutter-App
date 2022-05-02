@@ -65,13 +65,16 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                   SizedBox(
                     height: sizeV * 5,
                   ),
-                  Text(onboardingContents[index].title,
-                      style: Theme.of(context).textTheme.headline1),
+                  Container(
+                      padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
+                      child: Text(onboardingContents[index].title,
+                          style: Theme.of(context).textTheme.headline1)),
+
                   SizedBox(
                     height: sizeV * 5,
                   ),
                   Container(
-                    height: sizeV * 50,
+                    height: sizeV * 35,
                     child: Image.asset(
                       onboardingContents[index].image,
                       fit: BoxFit.contain,
@@ -80,28 +83,28 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                   SizedBox(
                     height: sizeV * 5,
                   ),
-                  RichText(
-                    textAlign: TextAlign.center,
-                    text: TextSpan(
-                      style: Theme.of(context).textTheme.bodyText2,
-                      children: [
-                        TextSpan(text: 'We will be '),
-                        TextSpan(
-                            text: 'your first step ',
-                            style: TextStyle(
-                              color: Theme.of(context).primaryColor,
-                            )),
-                        TextSpan(text: 'to be a better '),
-                        TextSpan(text: 'version of '),
-                        TextSpan(
-                          text: 'yourself ',
-                          style: TextStyle(
-                            color: Theme.of(context).primaryColor,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                  // RichText(
+                  //   textAlign: TextAlign.center,
+                  //   text: TextSpan(
+                  //     style: Theme.of(context).textTheme.bodyText2,
+                  //     children: [
+                  //       TextSpan(text: 'We will be '),
+                  //       TextSpan(
+                  //           text: 'your first step ',
+                  //           style: TextStyle(
+                  //             color: Theme.of(context).primaryColor,
+                  //           )),
+                  //       TextSpan(text: 'to be a better '),
+                  //       TextSpan(text: 'version of '),
+                  //       TextSpan(
+                  //         text: 'yourself ',
+                  //         style: TextStyle(
+                  //           color: Theme.of(context).primaryColor,
+                  //         ),
+                  //       ),
+                  //     ],
+                  //   ),
+                  // ),
                   SizedBox(
                     height: sizeV * 5,
                   ),
@@ -118,11 +121,11 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                         buttonName: 'Get Started',
                         onPressed: () async {
                           await Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => CreateProfilePageWidget(),
-                          ),
-                        );
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => CreateProfilePageWidget(),
+                            ),
+                          );
                         },
                         bgColor: Theme.of(context).primaryColor,
                       )

@@ -64,8 +64,7 @@ class _AllergiesAndCuisinesPageWidgetState
                                             AlignmentDirectional(0, 0.25),
                                         child: DynamicallyCheckbox()),
                                     const Align(
-                                      alignment:
-                                          AlignmentDirectional(0, 0.95),
+                                      alignment: AlignmentDirectional(0, 0.95),
                                       child: Text(
                                         'Swipe down to continue',
                                         //style: FlutterFlowTheme.of(context).bodyText2,
@@ -379,14 +378,14 @@ class _AllergiesAndCuisinesPageWidgetState
                                             await Navigator.push(
                                               context,
                                               MaterialPageRoute(
-                                                builder: (context) => BottomNavigation(),
+                                                builder: (context) =>
+                                                    BottomNavigation(),
                                               ),
                                             );
                                           },
                                           padding: EdgeInsets.zero,
                                           shape: const RoundedRectangleBorder(
-                                              borderRadius: BorderRadius
-                                                      .all(
+                                              borderRadius: BorderRadius.all(
                                                   const Radius.circular(25))),
                                           color: Colors.black,
                                           elevation: 2,
@@ -410,8 +409,8 @@ class _AllergiesAndCuisinesPageWidgetState
                           Align(
                             alignment: const AlignmentDirectional(-0.8, -0.9),
                             child: Padding(
-                              padding:
-                                  const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0, 0, 0, 10),
                               child: Container(
                                 child: SmoothPageIndicator(
                                   controller: pageViewController =
@@ -432,8 +431,8 @@ class _AllergiesAndCuisinesPageWidgetState
                                     radius: 16,
                                     dotWidth: 16,
                                     dotHeight: 16,
-                                    dotColor:  Color(0xFF9E9E9E),
-                                    activeDotColor:  Color(0xFF009688),
+                                    dotColor: Color(0xFF9E9E9E),
+                                    activeDotColor: Color(0xFF009688),
                                     paintStyle: PaintingStyle.fill,
                                   ),
                                 ),
@@ -487,7 +486,7 @@ class DynamicallyCheckboxState extends State {
         padding: EdgeInsetsDirectional.fromSTEB(10, 180, 30, 60),
         alignment: Alignment.center,
 
-        margin:  EdgeInsetsDirectional.fromSTEB(50, 50, 30, 0),
+        margin: EdgeInsetsDirectional.fromSTEB(50, 50, 30, 0),
         //padding: EdgeInsetsDirectional.fromSTEB(50, 0, 30, 0),
         child: Expanded(
           child: ListView(
@@ -509,8 +508,8 @@ class DynamicallyCheckboxState extends State {
             //margin:  EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
           ),
         ),
-      //),
-    )
+        //),
+      )
     ]);
   }
 
