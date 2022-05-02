@@ -8,7 +8,7 @@ class MealApi {
   static Future<List<Meal>> getMeal() async {
 // model implementation
     PalPredictModel prediction = new PalPredictModel();
-    int pal = prediction.usePredictModel();
+    // int pal = prediction.usePredictModel();
 
     //get meal function should have a required parameter of Total Calories
     var httpsUri = Uri(
