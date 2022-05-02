@@ -334,6 +334,8 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget> {
                             builder: (context) => OnboardingScreen(),
                           ),
                         );
+                      } else {
+                        showSnackBar(res, context);
                       }
                     },
                     padding: EdgeInsets.zero,
