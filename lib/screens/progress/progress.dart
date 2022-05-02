@@ -6,10 +6,10 @@ import 'package:syncfusion_flutter_charts/charts.dart';
 class ProgressPage extends StatelessWidget {
   List<ProgressData> data = [
     ProgressData(1, 89),
-    ProgressData(2, 78),
-    ProgressData(3, 67),
-    ProgressData(4, 56),
-    ProgressData(5, 55),
+    ProgressData(2, 87),
+    ProgressData(3, 85),
+    ProgressData(4, 84),
+    ProgressData(5, 80),
   ];
 
   ProgressPage({Key? key}) : super(key: key);
@@ -36,7 +36,7 @@ class ProgressPage extends StatelessWidget {
         body: Container(
             child: SfCartesianChart(
                 primaryXAxis: CategoryAxis(),
-                title: ChartTitle(text: 'Weekly Progress Chart'),
+                title: ChartTitle(text: 'Weekly Weight Change Chart'),
                 legend: Legend(isVisible: true),
                 tooltipBehavior: TooltipBehavior(enable: true),
                 series: <ChartSeries<ProgressData, double>>[
@@ -44,7 +44,7 @@ class ProgressPage extends StatelessWidget {
                 dataSource: data,
                 xValueMapper: (ProgressData progress, _) => progress.week,
                 yValueMapper: (ProgressData progress, _) => progress.weight,
-                name: 'Progress',
+                name: 'Weight Change (X-Axis : Weeks & Y-Axis : Weight in KG)',
                 dataLabelSettings: DataLabelSettings(isVisible: true),
               )
             ])));
