@@ -77,9 +77,9 @@ class _AboutPageWidgetState extends State<AboutPageWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0, 380, 0, 0),
                                     child: Image.asset(
-                                      'assets/images/Grouppic.jpeg',
+                                      'assets/images/ourteam.png',
                                       width: 350,
-                                      height: 350,
+                                      height: 450,
                                       fit: BoxFit.cover,
                                     ),
                                   ),
